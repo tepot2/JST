@@ -22,7 +22,6 @@ module.exports = {
         this.pass = function (name, session) {
             this.passed_tests[this.passed_tests.length] = name;
             this.passes += 1;
-            //var logstring = "pass, " + name + ", , " + session.parameters.desiredCapabilities.browserName + "\r\n";
             var logstring = {
                 testname: name,
                 result: "pass",
@@ -35,8 +34,6 @@ module.exports = {
         this.fail = function (name, session, reason) {
             this.failed_tests[this.failed_tests.length] = name;
             this.failures += 1;
-            //var logstring = "fail, " + name + ", " + this.prepare_string(reason) + ", " + session.parameters.desiredCapabilities.browserName + "\r\n";
-            //fs.writeSync(fs.openSync("logfile.js", 'a'), logstring, null, undefined, 0)
             var logstring = {
                 testname: name,
                 result: "fail",
@@ -49,8 +46,6 @@ module.exports = {
         this.skip = function (name, session, reason) {
             this.skipped_tests[this.skipped_tests.length] = name;
             this.skips += 1;
-            //var logstring = "skip, " + name + ", " + this.prepare_string(reason) + ", " + session.parameters.desiredCapabilities.browserName + "\r\n";
-            //fs.writeSync(fs.openSync("logfile.js", 'a'), logstring, null, undefined, 0)
             var logstring = {
                 testname: name,
                 result: "skip",
