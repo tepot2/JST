@@ -22,15 +22,15 @@ module.exports = {
             "command_path_prefix": "/wd/hub"
         },
 
-        {
-            "name": "chrome",
-            "parameters": {
-                "desiredCapabilities": {
-                    "browserName": "chrome"
-                },
-            },
-            "port": 4444,
-            "command_path_prefix": "/wd/hub"
-        }
+        //{
+        //    "name": "chrome",
+        //    "parameters": {
+        //        "desiredCapabilities": {
+        //            "browserName": "chrome"
+        //        },
+        //    },
+        //    "port": 4444,
+        //    "command_path_prefix": "/wd/hub"
+        //}
     ]
 }
