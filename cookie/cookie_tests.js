@@ -10,12 +10,12 @@ module.exports = {
         session = new_session;
 
         var cookie_tests = [
-            ////cookie_test.py
-            //test_can_create_a_well_formed_cookie,
-            //test_cookies_should_allow_secure_to_be_set,
-            //test_secure_defaults_to_false,
+            //cookie_test.py
+            test_can_create_a_well_formed_cookie,
+            test_cookies_should_allow_secure_to_be_set,
+            test_secure_defaults_to_false,
             test_should_throw_an_exception_when_semicolon_exists_in_the_cookie_attribute,
-            //test_should_throw_an_exception_the_name_is_null
+            test_should_throw_an_exception_the_name_is_null
         ];
 
         for (var i = 0; i < cookie_tests.length; i++) {

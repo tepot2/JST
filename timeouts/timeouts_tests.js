@@ -10,17 +10,17 @@ module.exports = {
         session = new_session;
 
         var timeouts_tests = [
-            ////implicit_waits_test.py
-            //test_element_by_id,
-            //test_should_still_fail_to_find_an_element_when_implicit_waits_are_enabled,
+            //implicit_waits_test.py
+            test_element_by_id,
+            test_should_still_fail_to_find_an_element_when_implicit_waits_are_enabled,
             test_should_return_after_first_attempt_to_find_one_after_disabling_implicit_waits,
-            //test_should_implicitly_wait_until_at_least_one_element_is_found_when_searching_for_many,
-            //test_should_still_fail_to_find_an_element_by_class_when_implicit_waits_are_enabled,
-            //test_should_return_after_first_attempt_to_find_many_after_disabling_implicit_waits,
+            test_should_implicitly_wait_until_at_least_one_element_is_found_when_searching_for_many,
+            test_should_still_fail_to_find_an_element_by_class_when_implicit_waits_are_enabled,
+            test_should_return_after_first_attempt_to_find_many_after_disabling_implicit_waits,
 
-            ////page_load_timeouts_test.py
-            //test_should_timeout_on_page_load_taking_too_long,
-            //test_should_not_timeout_on_page_load
+            //page_load_timeouts_test.py
+            test_should_timeout_on_page_load_taking_too_long,
+            test_should_not_timeout_on_page_load
         ];
 
         for (var i = 0; i < timeouts_tests.length; i++) {

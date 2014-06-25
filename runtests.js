@@ -20,20 +20,23 @@ var session;
 function initialize() {
     var child = fork("server.js");
 
+    var logger_instance = new logger.logger;
+    logger_instance.prepare();
+
     for (var i = 0; i < config.browsers.length; i++) {
         session = new Session.session("", config.browsers[i].name, config.browsers[i].port, config.browsers[i].command_path_prefix, config.browsers[i].parameters);
         var session_id = driver.create_new_session(session);
         if (session_id) {
             session.session_id = session_id;
 
-            //cookie.run_all_tests(session);
-            //ecmascript.run_all_tests(session);
-            //elements.run_all_tests(session);
+            cookie.run_all_tests(session);
+            ecmascript.run_all_tests(session);
+            elements.run_all_tests(session);
             javascript.run_all_tests(session);
-            //modal.run_all_tests(session);
-            //navigation.run_all_tests(session);
-            //timeouts.run_all_tests(session);
-            //user_input.run_all_tests(session);
+            modal.run_all_tests(session);
+            navigation.run_all_tests(session);
+            timeouts.run_all_tests(session);
+            user_input.run_all_tests(session);
 
             driver.quit(session);
 
@@ -43,6 +46,9 @@ function initialize() {
             console.log("New session could not be created. Ensure that the server is running and the port numbers match.")
         }
     }
+
+    var logger_instance = new logger.logger;
+    logger_instance.finish();
 
     child.kill();
 }

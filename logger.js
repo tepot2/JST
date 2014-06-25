@@ -22,22 +22,42 @@ module.exports = {
         this.pass = function (name, session) {
             this.passed_tests[this.passed_tests.length] = name;
             this.passes += 1;
-            var logstring = "pass, " + name + ", , " + session.parameters.desiredCapabilities.browserName + "\r\n";
-            fs.writeSync(fs.openSync("logfile.csv", 'a'), logstring, null, undefined, 0)
+            //var logstring = "pass, " + name + ", , " + session.parameters.desiredCapabilities.browserName + "\r\n";
+            var logstring = {
+                testname: name,
+                result: "pass",
+                browser: session.parameters.desiredCapabilities.browserName,
+                reason: ""
+            }
+            fs.writeSync(fs.openSync("logfile.js", 'a'), ((this.passes + this.failures + this.skips) > 1 ? "," : "") + JSON.stringify(logstring), null, undefined, 0);
         }
 
         this.fail = function (name, session, reason) {
             this.failed_tests[this.failed_tests.length] = name;
             this.failures += 1;
-            var logstring = "fail, " + name + ", " + this.prepare_string(reason) + ", " + session.parameters.desiredCapabilities.browserName + "\r\n";
-            fs.writeSync(fs.openSync("logfile.csv", 'a'), logstring, null, undefined, 0)
+            //var logstring = "fail, " + name + ", " + this.prepare_string(reason) + ", " + session.parameters.desiredCapabilities.browserName + "\r\n";
+            //fs.writeSync(fs.openSync("logfile.js", 'a'), logstring, null, undefined, 0)
+            var logstring = {
+                testname: name,
+                result: "fail",
+                browser: session.parameters.desiredCapabilities.browserName,
+                reason: reason
+            }
+            fs.writeSync(fs.openSync("logfile.js", 'a'), ((this.passes + this.failures + this.skips) > 1 ? "," : "") + JSON.stringify(logstring), null, undefined, 0);
         }
 
         this.skip = function (name, session, reason) {
             this.skipped_tests[this.skipped_tests.length] = name;
             this.skips += 1;
-            var logstring = "skip, " + name + ", " + this.prepare_string(reason) + ", " + session.parameters.desiredCapabilities.browserName + "\r\n";
-            fs.writeSync(fs.openSync("logfile.csv", 'a'), logstring, null, undefined, 0)
+            //var logstring = "skip, " + name + ", " + this.prepare_string(reason) + ", " + session.parameters.desiredCapabilities.browserName + "\r\n";
+            //fs.writeSync(fs.openSync("logfile.js", 'a'), logstring, null, undefined, 0)
+            var logstring = {
+                testname: name,
+                result: "skip",
+                browser: session.parameters.desiredCapabilities.browserName,
+                reason: reason
+            }
+            fs.writeSync(fs.openSync("logfile.js", 'a'), ((this.passes+ this.failures + this.skips)> 1 ? "," : "") + JSON.stringify(logstring), null, undefined, 0);
         }
 
         this.results = function () {
@@ -60,9 +80,12 @@ module.exports = {
             }
         }
 
-        this.prepare_string = function (string) {
-            string = JSON.stringify(string);
-            string = string.replace(/,/g, '');
+        this.prepare = function () {
+            fs.writeSync(fs.openSync("logfile.js", 'a'), "[", null, undefined, 0);
+        }
+
+        this.finish = function () {
+            fs.writeSync(fs.openSync("logfile.js", 'a'), "]", null, undefined, 0);
         }
     }
 }

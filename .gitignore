@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+logfile.js
 
 # Runtime data
 pids
