@@ -53,8 +53,12 @@ module.exports = {
 }
 
 function test_response_401_auth_basic() {
-    var logger_instance = new logger.logger;
-    logger_instance.skip(tools.get_name_of_function(navigation_tests[i]), session, "Test incomplete");
+    //Python used 5 secs, which I think is too long.
+    driver.set_page_load_timeout(session, 2000);
+
+    var response = driver.get(session, tools.get_current_directory_name() + "/navigation/auth_required_basic");
+
+    tools.assert_equals(JSON.parse(response).status, "0", "test_response_401_auth_basic", session);
 }
 
 var next_body_text_global= ''
@@ -154,7 +158,7 @@ function test_get_fragment_in_document() {
 }
 
 //test_navigate_to_site_with_self_signed_cert replaces testCanNavigateToSiteWithSelfSignedCert
-function test_response_401_auth_basic() {
+function test_navigate_to_site_with_self_signed_cert() {
     var logger_instance = new logger.logger;
     logger_instance.skip(tools.get_name_of_function(navigation_tests[i]), session, "Test incomplete");
 }
