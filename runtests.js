@@ -12,7 +12,6 @@ function initialize() {
     }
 
     var driver = require('./driver.js');
-    var tools = require('./tools.js');
     var fork = require("child_process").fork;
     var config = require('./config.js');
     var cookie = require('./cookie/cookie_tests.js');
