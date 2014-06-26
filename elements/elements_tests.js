@@ -564,7 +564,6 @@ function test_input_hidden_is_unclickable() {
     //var input = driver.element_by_css_selector(session, "input");
 
     //var response = input.click();
-    //console.log(JSON.parse(response));
     //tools.assert_equals(JSON.parse(response).status, 11, "test_input_hidden_is_unclickable", session);
     var logger_instance = new logger.logger;
     logger_instance.skip("test_input_hidden_is_unclickable", session, "unknown");

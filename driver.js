@@ -597,8 +597,10 @@ function element_s_(session, using, value, multiple, from) {
 }
 
 function sync_command(session, command_path, method, json_object) {
-    console.log("\n\n"+command_path);
-    console.log(json_object);
+    if (session.debug) {
+        console.log("\n\n" + command_path);
+        console.log(json_object);
+    }
     var number = uuid.v1()+ "";
     var child = fork("./http_request.js", [number, command_path, method, json_object, JSON.stringify(session)]);
     while (!fs.existsSync(number + ".4")) { }
@@ -606,10 +608,12 @@ function sync_command(session, command_path, method, json_object) {
     fs.unlink(number + ".4");
     child.kill();
 
-    if (buff.length < 1000) {
-        console.log(buff.toString());
-    } else {
-        console.log(buff.toString('utf8', 0, 1000));
+    if (session.debug) {
+        if (buff.length < 1000) {
+            console.log(buff.toString());
+        } else {
+            console.log(buff.toString('utf8', 0, 1000));
+        }
     }
 
     return buff.toString();

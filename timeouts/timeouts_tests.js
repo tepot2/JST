@@ -88,8 +88,6 @@ function test_should_implicitly_wait_until_at_least_one_element_is_found_when_se
 
     var elements = driver.elements_by_class_name(session, "redbox");
 
-    console.log(elements);
-
     tools.assert_true(elements.length >= 1, "test_should_implicitly_wait_until_at_least_one_element_is_found_when_searching_for_many", session);
 }
 

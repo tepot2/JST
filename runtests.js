@@ -24,7 +24,7 @@ function initialize() {
     logger_instance.prepare();
 
     for (var i = 0; i < config.browsers.length; i++) {
-        session = new Session.session("", config.browsers[i].name, config.browsers[i].port, config.browsers[i].command_path_prefix, config.browsers[i].parameters);
+        session = new Session.session("", config.browsers[i].name, config.browsers[i].port, config.browsers[i].command_path_prefix, config.browsers[i].parameters, config.browsers[i].debug);
         var session_id = driver.create_new_session(session);
         if (session_id) {
             session.session_id = session_id;

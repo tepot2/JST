@@ -9,6 +9,7 @@ module.exports = {
         //    },
         //    "port": 17756,
         //    "command_path_prefix":"/"
+        //    "debug": false
         //},
 
         {
@@ -19,7 +20,8 @@ module.exports = {
                 },
             },
             "port": 4444,
-            "command_path_prefix": "/wd/hub"
+            "command_path_prefix": "/wd/hub",
+            "debug": false
         },
 
         //{
@@ -31,6 +33,7 @@ module.exports = {
         //    },
         //    "port": 4444,
         //    "command_path_prefix": "/wd/hub"
+        //    "debug": false
         //}
     ]
 }

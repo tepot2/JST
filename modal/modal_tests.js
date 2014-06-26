@@ -263,7 +263,7 @@ function  test_switch_to_missing_alert_fails() {
 
 function test_can_quit_when_an_alert_is_present() {
     var session_id2 = driver.create_new_session(session.parameters);
-    var session2 = new Session.session(session_id2, session.port, session.command_path_prefix, session.parameters);
+    var session2 = new Session.session(session_id2, session.port, session.command_path_prefix, session.parameters, session.debug);
     driver.get(session2, tools.get_current_directory_name() + '/modal/res/alerts.html');
     driver.element_by_id(session2, 'alert').click();
     driver.quit(session2);
