@@ -601,14 +601,20 @@ function sync_command(session, command_path, method, json_object) {
         console.log("\n\n" + command_path);
         console.log(json_object);
     }
+
+    //This identifies a command/response pair
     var number = uuid.v1()+ "";
     var child = fork("./http_request.js", [number, command_path, method, json_object, JSON.stringify(session)]);
-    while (!fs.existsSync(number + ".4")) { }
+
+    while (!fs.existsSync(number + ".4")) { }//spin wait for response
+
     var buff = fs.readFileSync(number + ".4");
+
     fs.unlink(number + ".4");
     child.kill();
 
     if (session.debug) {
+        //This length limit is in place since screenshots are so large.
         if (buff.length < 1000) {
             console.log(buff.toString());
         } else {

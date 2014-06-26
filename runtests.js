@@ -1,23 +1,32 @@
-var driver = require('./driver.js');
-var tools = require('./tools.js');
-var fork = require("child_process").fork;
-var config = require('./config.js');
-var cookie = require('./cookie/cookie_tests.js');
-var ecmascript = require('./ecmascript/ecmascript_tests.js');
-var elements = require('./elements/elements_tests.js');
-var javascript = require('./javascript/javascript_tests.js');
-var modal = require('./modal/modal_tests.js');
-var navigation = require('./navigation/navigation_tests.js');
-var timeouts = require('./timeouts/timeouts_tests.js');
-var user_input = require('./user_input/user_input_tests.js');
-var Session = require('./session.js');
-var logger = require('./logger.js');
-
 initialize();
 
 var session;
 
 function initialize() {
+    try {
+        var uuid = require('node-uuid');
+        var colors = require('colors');
+    } catch(err){
+        console.log("Use \"npm install node-uuid\" and \"npm install colors\" to install missing dependencies first.");
+        return;
+    }
+
+    var driver = require('./driver.js');
+    var tools = require('./tools.js');
+    var fork = require("child_process").fork;
+    var config = require('./config.js');
+    var cookie = require('./cookie/cookie_tests.js');
+    var ecmascript = require('./ecmascript/ecmascript_tests.js');
+    var elements = require('./elements/elements_tests.js');
+    var javascript = require('./javascript/javascript_tests.js');
+    var modal = require('./modal/modal_tests.js');
+    var navigation = require('./navigation/navigation_tests.js');
+    var timeouts = require('./timeouts/timeouts_tests.js');
+    var user_input = require('./user_input/user_input_tests.js');
+    var Session = require('./session.js');
+    var logger = require('./logger.js');
+
+
     var child = fork("server.js");
 
     var logger_instance = new logger.logger;

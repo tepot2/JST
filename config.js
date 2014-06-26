@@ -1,17 +1,5 @@
 module.exports = {
     browsers: [
-        //{
-        //    "name": "IE",
-        //    "parameters": {
-        //        "desiredCapabilities": {
-        //            "browserName": "IEDC"
-        //        },
-        //    },
-        //    "port": 17756,
-        //    "command_path_prefix":"/"
-        //    "debug": false
-        //},
-
         {
             "name": "firefox",
             "parameters": {
@@ -23,6 +11,17 @@ module.exports = {
             "command_path_prefix": "/wd/hub",
             "debug": false
         },
+        //{
+        //    "name": "IE",
+        //    "parameters": {
+        //        "desiredCapabilities": {
+        //            "browserName": "IEDC"
+        //        },
+        //    },
+        //    "port": 17756,
+        //    "command_path_prefix":"/"
+        //    "debug": false
+        //},
 
         //{
         //    "name": "chrome",
