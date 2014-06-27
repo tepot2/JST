@@ -25,6 +25,10 @@ module.exports = {
             return JSON.parse(driver.click(this.session, this.index)).value;
         }
 
+        this.send_keys = function (keys) {
+            return JSON.parse(driver.send_keys(this.session, this.index, keys));
+        }
+
         this.clear = function () {
             return driver.clear(this.session, this.index);
         }

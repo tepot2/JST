@@ -431,6 +431,14 @@ module.exports = {
         return sync_command(session, command_path, 'GET', '{}');
     },
 
+    send_keys: function (session, element, keys) {
+        jsonparams = JSON.stringify({
+            'value': keys
+        });
+        command_path = "/session/" + session.session_id + "/element/" + element + "/value";
+        return sync_command(session, command_path, 'POST', jsonparams);
+    },
+
     clear: function (session, element) {
         if (session.name == "IE") {
             throw "Unimplemented"
