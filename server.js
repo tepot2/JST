@@ -1,6 +1,11 @@
+/*
+This is a simple http server which is started with the main Node.js process. It serves all the
+.html files that are used in tests. Special cases can be added to simulate different types of
+responses. 
+*/
 var http = require("http");
-var url = require("url");
-var fs = require('fs');
+var url = require("url");//url parser
+var fs = require('fs');//file system
 var path = require('path');
 
 run_server();
