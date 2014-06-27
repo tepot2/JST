@@ -13,7 +13,12 @@ function initialize() {
 
     var driver = require('./driver.js');
     var fork = require("child_process").fork;
-    var config = require('./config.js');
+    var config;
+    try{
+        config = require('./config_local.js');
+    } catch (err) {
+        config = require('./config.js');
+    }
     var cookie = require('./cookie/cookie_tests.js');
     var ecmascript = require('./ecmascript/ecmascript_tests.js');
     var elements = require('./elements/elements_tests.js');
