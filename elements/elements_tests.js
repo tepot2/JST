@@ -10,83 +10,102 @@ module.exports = {
         session = new_session;
 
         var elements_tests = [
-            //element_location/element_location_test.py
-            test_find_element_by_id,
-            test_find_element_by_name,
-            test_find_element_by_css_selector,
-            test_find_element_by_link_text,
-            test_find_element_by_partial_link_text,
-            test_find_element_by_xpath,
+            ////element_location/element_location_test.py
+            //test_find_element_by_id,
+            //test_find_element_by_name,
+            //test_find_element_by_css_selector,
+            //test_find_element_by_link_text,
+            //test_find_element_by_partial_link_text,
+            //test_find_element_by_xpath,
 
-            //element_state/method_test.py
-            test_get_element_attribute,
-            test_style_attribute,
-            test_color_serialization_of_style_attribute,
-            test_true_if_boolean_attribute_present,
-            test_none_if_boolean_attribute_absent,
-            test_option_with_attribute_value,
-            test_option_without_value_attribute,
-            test_a_href_attribute,
-            test_img_src_attribute,
-            test_custom_attribute,
-            test_attribute_not_present,
+            ////element_state/method_test.py
+            //test_get_element_attribute,
+            //test_style_attribute,
+            //test_color_serialization_of_style_attribute,
+            //test_true_if_boolean_attribute_present,
+            //test_none_if_boolean_attribute_absent,
+            //test_option_with_attribute_value,
+            //test_option_without_value_attribute,
+            //test_a_href_attribute,
+            //test_img_src_attribute,
+            //test_custom_attribute,
+            //test_attribute_not_present,
 
-            //element_state/visibility_test.py
-            test_0x0_pixel_element_is_not_visible,
-            test_0x0_pixel_text_node_is_visible,
-            test_1x1_pixel_element,
-            test_zero_sized_element_is_shown_if_decendant_has_size,
-            test_input_type_hidden_is_never_visible,
-            test_input_morphs_into_hidden,
-            test_parent_node_visible_when_all_children_are_absolutely_positioned_and_overflow_is_hidden,
-            test_parent_of_absolutely_positioned_elements_visible_where_ancestor_overflow_is_hidden,
-            test_element_hidden_by_overflow_x_y_hidden,
-            test_element_hidden_by_overflow_x_y_scroll,
-            test_element_hidden_by_overflow_x_y_auto,
-            test_element_hidden_by_overflow_y_x_hidden,
-            test_element_hidden_by_overflow_y_x_scroll,
-            test_element_hidden_by_overflow_y_x_auto,
-            test_parent_node_visible_when_all_children_are_absolutely_position_and_overflow_is_hidden,
-            test_element_scrollable_by_overflow_x_is_visible,
-            test_element_scrollable_by_overflow_x_and_y_is_visible,
-            test_element_scrollable_by_overflow_y_is_visible,
-            test_element_outside_viewport,
-            test_element_dynamically_moved_outside_viewport,
-            test_element_hidden_by_other_element,
-            test_element_moved_outside_viewport_by_transform,
-            test_element_moved_behind_other_element_by_transform,
-            test_text_with_same_color_as_background,
-            test_text_with_same_color_as_parent_background,
-            test_text_with_matching_color_and_background,
-            test_element_with_same_color_as_background,
-            test_element_with_same_color_as_parent_background,
-            test_implicit,
-            test_empty,
-            test_visibility_hidden,
-            test_overflow_hidden,
-            test_display_block,
-            test_display_none,
-            test_display_none_hides_child_node,
-            test_display_none_hides_child_node_link,
-            test_display_none_hides_child_node_paragraph,
-            test_display_none_on_parent_takes_presedence,
-            test_display_none_on_parent_takes_presedence_over_visibility_visible,
-            test_display_none_hidden_dynamically,
-            test_element_state_hidden,
-            test_element_state_visible,
-            test_visibility_hidden_hides_child_node,
-            test_visibility_hidden_hides_child_node_link,
-            test_visibility_hidden_hides_child_node_paragraph,
-            test_visibility_hidden_on_child_takes_presedence,
-            test_visibility_hidden_on_parent_takes_presedence_over_display_block,
-            test_visibility_hidden_set_dynamically,
-            test_should_show_element_not_visible_with_hidden_attribute,
-            test_should_show_element_not_visible_when_parent_element_has_hidden_attribute,
-            test_input_hidden_is_unclickable,
-            test_hidden_input_checkbox_is_untogglable,
-            test_typing_in_hidden_input_is_impossible,
-            test_element_partially_hidden_by_other_element,
-            test_element_hidden_by_z_index,
+            ////element_state/visibility_test.py
+            //test_0x0_pixel_element_is_not_visible,
+            //test_0x0_pixel_text_node_is_visible,
+            //test_1x1_pixel_element,
+            //test_zero_sized_element_is_shown_if_decendant_has_size,
+            //test_input_type_hidden_is_never_visible,
+            //test_input_morphs_into_hidden,
+            //test_parent_node_visible_when_all_children_are_absolutely_positioned_and_overflow_is_hidden,
+            //test_parent_of_absolutely_positioned_elements_visible_where_ancestor_overflow_is_hidden,
+            //test_element_hidden_by_overflow_x_y_hidden,
+            //test_element_hidden_by_overflow_x_y_scroll,
+            //test_element_hidden_by_overflow_x_y_auto,
+            //test_element_hidden_by_overflow_y_x_hidden,
+            //test_element_hidden_by_overflow_y_x_scroll,
+            //test_element_hidden_by_overflow_y_x_auto,
+            //test_parent_node_visible_when_all_children_are_absolutely_position_and_overflow_is_hidden,
+            //test_element_scrollable_by_overflow_x_is_visible,
+            //test_element_scrollable_by_overflow_x_and_y_is_visible,
+            //test_element_scrollable_by_overflow_y_is_visible,
+            //test_element_outside_viewport,
+            //test_element_dynamically_moved_outside_viewport,
+            //test_element_hidden_by_other_element,
+            //test_element_moved_outside_viewport_by_transform,
+            //test_element_moved_behind_other_element_by_transform,
+            //test_text_with_same_color_as_background,
+            //test_text_with_same_color_as_parent_background,
+            //test_text_with_matching_color_and_background,
+            //test_element_with_same_color_as_background,
+            //test_element_with_same_color_as_parent_background,
+            //test_implicit,
+            //test_empty,
+            //test_visibility_hidden,
+            //test_overflow_hidden,
+            //test_display_block,
+            //test_display_none,
+            //test_display_none_hides_child_node,
+            //test_display_none_hides_child_node_link,
+            //test_display_none_hides_child_node_paragraph,
+            //test_display_none_on_parent_takes_presedence,
+            //test_display_none_on_parent_takes_presedence_over_visibility_visible,
+            //test_display_none_hidden_dynamically,
+            //test_element_state_hidden,
+            //test_element_state_visible,
+            //test_visibility_hidden_hides_child_node,
+            //test_visibility_hidden_hides_child_node_link,
+            //test_visibility_hidden_hides_child_node_paragraph,
+            //test_visibility_hidden_on_child_takes_presedence,
+            //test_visibility_hidden_on_parent_takes_presedence_over_display_block,
+            //test_visibility_hidden_set_dynamically,
+            //test_should_show_element_not_visible_with_hidden_attribute,
+            //test_should_show_element_not_visible_when_parent_element_has_hidden_attribute,
+            //test_input_hidden_is_unclickable,
+            //test_hidden_input_checkbox_is_untogglable,
+            //test_typing_in_hidden_input_is_impossible,
+            //test_element_partially_hidden_by_other_element,
+            //test_element_hidden_by_z_index,
+
+            //ms-getElementAttribute
+            test_find_span_element_in_first_level_under_body,
+            test_find_an_element_by_href_attribute,
+            //test_find_an_attribute_by_name_with_false_value,
+            test_find_an_attribute_myattr,
+            //test_find_an_attribute_in_an_element_with_a_long_id,
+            test_find_a_value_element_in_option_element_that_doesnt_have_a_value_attribute,
+            test_find_value_for_a_style_attribute_in_option_element,
+            test_find_attribute_that_does_not_exist,
+            test_find_attribute_accesskey,
+            test_multiple_elements_with_same_class_nested_attribute,
+            test_find_attribute_with_special_characters,
+            test_find_attribute_with_special_char_name_and_value,
+            test_find_attribute_with_numeric_name,
+            test_find_attribute_with_numeric_value,
+            test_find_attribute_with_negative_numeric_name,
+            test_find_attribute_with_negative_numeric_value,
+
         ];
 
         for (var i = 0; i < elements_tests.length; i++) {
@@ -600,8 +619,152 @@ function test_element_partially_hidden_by_other_element() {
 
 function test_element_hidden_by_z_index() {
     driver.get(session, tools.get_current_directory_name() + "/elements/res/element-hidden-by-z-index.html");
-    overlay = driver.element_by_id(session, "overlay");
-    hidden = driver.element_by_id(session, "hidden");
+    var overlay = driver.element_by_id(session, "overlay");
+    var hidden = driver.element_by_id(session, "hidden");
 
     tools.assert_true(overlay.is_displayed() && !hidden.is_displayed(), "test_element_hidden_by_z_index", session);
+}
+
+function test_find_span_element_in_first_level_under_body() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "div1");
+    var attribute = element.get_attribute("name");
+
+    tools.assert_equals("div-name", attribute, "test_find_span_element_in_first_level_under_body", session);
+}
+
+function test_find_an_element_by_href_attribute() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "my-id-link");
+    var attribute = element.get_attribute("href");
+
+    tools.assert_equals("www.bing.com", attribute, "test_find_an_element_by_href_attribute", session);
+}
+
+function test_find_an_attribute_by_name_with_false_value() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "my-id-link");
+    var attribute = element.get_attribute("name");
+
+    tools.assert_equals("false", attribute, "test_find_an_attribute_by_name_with_false_value", session);
+}
+
+function test_find_an_attribute_myattr() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "my-id-link");
+    var attribute = element.get_attribute("myAttr");
+
+    tools.assert_equals("myval", attribute, "test_find_an_attribute_myattr", session);
+}
+
+function test_find_an_attribute_in_an_element_with_a_long_id() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "my_id_with_a_relatively_long_name_test");
+    var attribute = element.get_attribute("class");
+
+    tools.assert_equals("my_id_with_a_relatively_long_name_test_class", attribute, "test_find_an_attribute_in_an_element_with_a_long_id", session);
+}
+
+function test_find_a_value_element_in_option_element_that_doesnt_have_a_value_attribute() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "opt-1");
+    var attribute = element.get_attribute("value");
+
+    tools.assert_equals("My Option 1", attribute, "test_find_a_value_element_in_option_element_that_doesnt_have_a_value_attribute", session);
+}
+
+function test_find_value_for_a_style_attribute_in_option_element() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "opt-1");
+    var attribute = element.get_attribute("style");
+
+    tools.assert_equals("font-size: 11px; display:block;", attribute, "test_find_value_for_a_style_attribute_in_option_element", session);
+}
+
+function test_find_attribute_that_does_not_exist() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "attribute_that_does_not_exist");
+    var attribute = element.get_attribute("lang");
+
+    tools.assert_equals(null, attribute, "test_find_attribute_that_does_not_exist", session);
+}
+
+function test_find_attribute_accesskey() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "id_attribute_accesskey");
+    var attribute = element.get_attribute("accesskey");
+
+    tools.assert_equals("nothing", attribute, "test_find_attribute_accesskey", session);
+}
+
+function test_multiple_elements_with_same_class_nested_attribute() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "id_multiple_elements_same_class_nested_div_depth_2");
+    var attribute = element.get_attribute("class");
+
+    tools.assert_equals("multiple_elements_same_class_nested", attribute, "test_multiple_elements_with_same_class_nested_attribute", session);
+}
+
+function test_find_attribute_with_special_characters() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "id_special_char_attribute_name");
+    var attribute = element.get_attribute("*");
+
+    tools.assert_equals("special_char_attribute_name", attribute, "test_find_attribute_with_special_characters", session);
+}
+
+function test_find_attribute_with_special_char_name_and_value() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "id_special_char_attribute_name_and_value");
+    var attribute = element.get_attribute("@");
+
+    tools.assert_equals("(", attribute, "test_find_attribute_with_special_char_name_and_value", session);
+}
+
+function test_find_attribute_with_numeric_name() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "id_attribute_name_numeric");
+    var attribute = element.get_attribute("1");
+
+    tools.assert_equals("numeric attribute name", attribute, "test_find_attribute_with_numeric_name", session);
+}
+
+function test_find_attribute_with_numeric_value() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "id_attribute_value_numeric");
+    var attribute = element.get_attribute("one");
+
+    tools.assert_equals("2", attribute, "test_find_attribute_with_numeric_value", session);
+}
+
+function test_find_attribute_with_negative_numeric_name() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "id_attribute_negative_numeric_name");
+    var attribute = element.get_attribute("-5");
+
+    tools.assert_equals("attribute name is -5", attribute, "test_find_attribute_with_negative_numeric_name", session);
+}
+
+function test_find_attribute_with_negative_numeric_value() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+
+    var element = driver.element_by_id(session, "id_attribute_negative_numeric_value");
+    var attribute = element.get_attribute("negative_numeric_value");
+
+    tools.assert_equals("-9", attribute, "test_find_attribute_with_negative_numeric_value", session);
 }
