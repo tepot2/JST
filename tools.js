@@ -1,4 +1,6 @@
-//public function declarations
+/*
+Some helper functions which can be used in testing. 
+*/
 var logger= require('./logger.js')
 
 module.exports = {
@@ -68,8 +70,6 @@ module.exports = {
     },
 
     get_current_directory_name: function() {
-        var full_path = __dirname;
-        //return "file:///"+ full_path.replace(/\\/g, '/');
         return "http://127.0.0.1:5040";
     },
 

@@ -1,6 +1,14 @@
-//Logging singleton
-var fs = require('fs');
+/*
+This is a logger singleton which allows for centralized logging and reporting of all tests. It can
+be accessed with: 
 
+    var logger = require(_path_to_this_file);
+    var logger_instance = new logger.logger;
+
+As tests are reported pass/fail/skip, the logger will write JSON to logfile.js, which describes
+the result. To print these results to the console, call "logger_instance.results();"
+*/
+var fs = require('fs');
 var colors = require('colors');
 
 module.exports = {

@@ -1,3 +1,13 @@
+/*
+This is the driver class, which handles all communication with the remote end. Below are several
+exported commands which abstract out some of the complexity of sending http requests and creating
+JSON parameters. 
+
+Finally, there is a sync_command function which allows a command to be sent and blocks until a 
+response is received, which simplifies the writing of tests. It is documented more thoroughly 
+below.
+*/
+
 var fork = require("child_process").fork;
 var fs = require('fs');
 fs.existsSync = fs.existsSync || require('path').existsSync; //for linux
@@ -604,6 +614,18 @@ function element_s_(session, using, value, multiple, from) {
     }
 }
 
+/*
+This function allows for synchronous use of commands and responses, without the need for callback
+functions. A GUID is generated for each command, which is passed with the path and parameters to a
+new Node.js process. This process then spin-waits until a file appears that matches the GUID with a
+.4 file extension. When this file is found, the file (which contains the response) is read, the
+child process is killed, and the file is deleted. More information can be found in the 
+http_request.js file.
+
+In the case of a failure, a screenshot is often taken and returned in Base64, which would print a 
+lot of characters to the screen (if debugging is enabled), so only the first 1000 characters of 
+each response are printed.
+*/
 function sync_command(session, command_path, method, json_object) {
     if (session.debug) {
         console.log("\n\n" + command_path);
@@ -611,7 +633,8 @@ function sync_command(session, command_path, method, json_object) {
     }
 
     //This identifies a command/response pair
-    var number = uuid.v1()+ "";
+    var number = uuid.v1() + "";
+
     var child = fork("./http_request.js", [number, command_path, method, json_object, JSON.stringify(session)]);
 
     while (!fs.existsSync(number + ".4")) { }//spin wait for response
