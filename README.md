@@ -5,17 +5,20 @@ browser automation specification known as WebDriver.
 
 ## How to run the tests
 
-1. Install Node.js http://nodejs.org/
-2. Download the Selenium Server http://docs.seleniumhq.org/download/
-3. Install Java http://www.java.com/en/download/index.jsp if necessary
-4. Run the server with "java -jar selenium-server-standalone-2.42.2.jar"
+1. Clone or download the repository using the links on the right.
+2. Install Node.js http://nodejs.org/ .
+3. Download the Selenium Server http://docs.seleniumhq.org/download/ .
+4. Install Java http://www.java.com/en/download/index.jsp if necessary.
+5. Run the server with "java -jar selenium-server-standalone-2.42.2.jar"
    (your version number might be different).
-5. Open a Node.js command prompt window and navigate to the root directory.
-6. Install the necessary node packages with "npm install node-uuid" and "npm 
-   install colors"
-7. Update the config.js file if necessary. By default, the tests will only run
-   in Firefox with debugging disabled.
-8. Run the tests with "node runtests.js" (entered in Node.js command prompt).
+6. Open a Node.js command prompt window and navigate to the root directory
+   of this repository.
+7. Install the necessary node packages with "npm install node-uuid" and "npm 
+   install colors".
+8. Install Firefox or update the config.js file to run your browser. Note that
+   using another browser will likely require you to download additional 
+   software. By default, the tests will run in Firefox with debugging disabled.
+9. Run the tests with "node runtests.js" (entered in Node.js command prompt).
 
 ## Updating configuration
 
