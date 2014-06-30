@@ -30,7 +30,6 @@ function initialize() {
 
     //The test files
     var cookie = require('./cookie/cookie_tests.js');
-    var ecmascript = require('./ecmascript/ecmascript_tests.js');
     var elements = require('./elements/elements_tests.js');
     var javascript = require('./javascript/javascript_tests.js');
     var modal = require('./modal/modal_tests.js');
@@ -52,7 +51,6 @@ function initialize() {
             session.session_id = session_id;
 
             cookie.run_all_tests(session);
-            ecmascript.run_all_tests(session);
             elements.run_all_tests(session);
             javascript.run_all_tests(session);
             modal.run_all_tests(session);
