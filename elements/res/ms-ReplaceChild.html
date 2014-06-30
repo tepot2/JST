@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+removeChild test for verifying WebDriver's stale-element-resource error
+
+<button id="test" onclick="removeElement()">Test Button</button>
+
+<script type"text/javascript">
+function removeElement() {
+    var s = document.getElementById("test");
+    var s2 = document.createElement("button");
+    document.body.replaceChild(s2, s);
+}
+</script>
+</body>
+</html>

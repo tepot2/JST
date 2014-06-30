@@ -30,6 +30,10 @@ module.exports = {
             return JSON.parse(driver.get_displayed(this.session, this.index)).value;
         }
 
+        this.is_selected = function () {
+            return JSON.parse(driver.get_selected(this.session, this.index)).value;
+        }
+
         this.click = function () {
             return JSON.parse(driver.click(this.session, this.index)).value;
         }

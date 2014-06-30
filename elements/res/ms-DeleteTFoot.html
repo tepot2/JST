@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+deleteTFoot test for verifying WebDriver's stale-element-resource error
+<table id="t1">
+    <TFoot><td><button id="test" onclick="removeElement()">Test Button</button></td></TFoot>
+</table>
+
+<script type"text/javascript">
+function removeElement() {
+    var t1 = document.getElementById("t1");
+    t1.deleteTFoot();
+}
+</script>
+</body>
+</html>

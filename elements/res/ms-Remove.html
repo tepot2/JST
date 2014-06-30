@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+swapNode test for verifying WebDriver's stale-element-resource error
+<select id="d1">
+<option id="test" onclick="removeElement()">Test Button</option>
+</select>
+<script type"text/javascript">
+function removeElement() {
+    document.getElementById("d1").remove(0);
+}
+</script>
+</body>
+</html>

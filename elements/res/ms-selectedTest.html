@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<body>
+
+<h1>Select Elements</h1>
+<select>
+    <option id="pass-1">pass-1</option>
+</select>    
+<select>
+    <option id="pass-2">pass-2</option>
+    <option id="fail-1">fail-1</option>
+</select>    
+<select disabled>
+    <option id="fail-2">fail-2</option>
+    <option id="pass-3" selected>pass-3</option>
+    <option id="fail-3">fail-3</option>
+</select>    
+<select>
+    <option id="fail-4" checked>fail-4</option>
+    <option id="fail-5">fail-5</option>
+    <option id="pass-4" selected>pass-4</option>
+</select>    
+<select>
+    <option id="fail-6" selected>fail-6</option>
+    <option id="pass-5">pass-5</option>
+</select> 
+<script>
+    document.getElementById("pass-5").selected = true;
+</script>
+<select multiple>
+    <option id="fail-7">fail-7</option>
+    <option id="fail-8">fail-8</option>
+</select>    
+<select multiple>
+    <option id="pass-6" selected>pass-6</option>
+    <option id="fail-9" selected>fail-9</option>
+    <option id="pass-7">pass-7</option>
+</select>    
+<script>
+    document.getElementById("fail-9").selected = false;
+    document.getElementById("pass-7").selected = true;
+</script>
+
+<h1>Input Checkbox Elements</h1>
+<input type="checkbox" id="pass-8" />pass-8
+<script>
+   document.getElementById("pass-8").checked = true;
+</script>
+<input type="checkbox" id="pass-9" checked />pass-9
+<script>
+   document.getElementById("pass-9").indeterminate = true;
+</script>
+<input type="checkbox" id="fail-10" />fail-10
+<input type="checkbox" id="fail-11" checked />fail-11
+<script>
+   document.getElementById("fail-11").checked = false;
+</script>
+<input type="checkbox" id="fail-12" />fail-12
+<script>
+   document.getElementById("fail-12").indeterminate = true;
+</script>
+<input type="checkbox" id="fail-13" selected />fail-13
+<input type="checkbox" id="pass-10" checked />pass-10
+   
+<h1>Input Radio Elements</h1>
+<br>Group 1:<br>
+<input type="radio" name="group1" id="pass-11" checked />pass-11
+<br>Group 2:<br>
+<input type="radio" name="group2" id="pass-12" />pass-12
+<script>
+   document.getElementById("pass-12").checked = true;
+</script>
+<br>Group 3:<br>
+<input type="radio" name="group3" id="fail-14" />fail-14
+<input type="radio" name="group3" id="pass-13" checked />pass-13
+<br>Group 4:<br>
+<input type="radio" name="group4" id="fail-15" checked />fail-15
+<input type="radio" name="group4" id="pass-14" checked />pass-14
+<br>Group 5:<br>
+<input type="radio" name="group5" id="fail-16" />fail-16
+<input type="radio" name="group5" id="fail-17" checked />fail-17
+<script>
+   document.getElementById("fail-17").checked = false;
+</script>
+<br>Group 6<br>
+<input type="radio" name="group6" id="pass-15" />pass-15
+<input type="radio" name="group6" id="fail-18" checked />fail-18
+<script>
+   document.getElementById("pass-15").checked = true;
+</script>
+</body>
+</html>

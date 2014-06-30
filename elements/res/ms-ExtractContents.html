@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+</head>
+<body>
+extractContents test for verifying WebDriver's stale-element-resource error
+<div id="d1">
+<button id="test" onclick="removeElement()">Test Button</button>
+</div>
+<script type"text/javascript">
+function removeElement() {
+    var d1 = document.getElementById("d1");
+    
+    var range = document.createRange();
+    range.selectNodeContents(d1);
+    range.extractContents();
+}
+</script>
+</body>
+</html>

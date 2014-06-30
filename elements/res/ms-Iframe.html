@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+navigation in an IFrame test for verifying WebDriver's stale-element-resource error
+<script id="content" type="x-iframe-contents">
+    <~button id="test" onclick="removeElement()">Test Button<~/button>
+    <~script>
+    function removeElement() {
+        location.href = "about:blank"
+    }
+    <~/script>
+</script>
+<iframe src="about:blank"></iframe>
+<script type"text/javascript">
+var iframeDoc = window[0].document;
+var iframeContents = document.getElementById("content").innerHTML.replace(/<~/g, "<");
+iframeDoc.open();
+iframeDoc.write(iframeContents);
+iframeDoc.close();
+</script>
+</body>
+</html>
