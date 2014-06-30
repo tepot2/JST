@@ -111,7 +111,8 @@ module.exports = {
             ////test_delete_caption,
 
             ////ms-selectedTest
-            test_selected_passes,
+            //test_selected_trues,
+            test_selected_falses
         ];
 
         for (var i = 0; i < elements_tests.length; i++) {
@@ -797,12 +798,22 @@ function test_delete_caption() {
     tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_delete_caption", session);
 }
 
-function test_selected_passes() {
+function test_selected_trues() {
     driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-selectedTest.html");
 
     for (var i = 1; i <= 15; i++) {
         var element = driver.element_by_id(session, "pass-" + i);
 
-        tools.assert_equals(element.is_selected(), true, "test_selected_pass (" + i + ")", session);
+        tools.assert_equals(element.is_selected(), true, "test_selected_true (" + i + ")", session);
+    }
+}
+
+function test_selected_falses() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-selectedTest.html");
+
+    for (var i = 1; i <= 18; i++) {
+        var element = driver.element_by_id(session, "fail-" + i);
+
+        tools.assert_equals(element.is_selected(), false, "test_selected_false (" + i + ")", session);
     }
 }
