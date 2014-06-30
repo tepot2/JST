@@ -19,37 +19,36 @@ module.exports = {
             test_read_only_text_input_element_should_not_clear,
             test_content_editable_area_should_clear,
 
-            ////ms-click-AllElements
-            //test_click_div,
-            //test_click_p,
-            //test_click_h1,
-            //test_click_pre,
-            //test_click_ol,
-            //test_click_ul,
-            //test_click_a,
-            //test_click_img,
-            //test_click_video,
-            //test_click_audio,
-            //test_click_canvas,
-            //test_click_progress,
-            //test_click_textarea,
-            //test_click_button,
-            //test_click_svg,
-            //test_click_input_range,
-            //test_click_input_button,
-            //test_click_input_submit,
-            //test_click_input_reset,
-            //test_click_input_checkbox,
-            //test_click_input_radio,
-            //test_click_input_file,
-            //test_click_input_password,
-            //test_click_input_text,
-            //test_click_input_number,
-            //test_click_input_tel,
-            //test_click_input_url,
-            //test_click_input_email,
-            //test_click_input_search,
-            //test_click_input_image
+            //ms-click-AllElements
+            test_click_div,
+            test_click_p,
+            test_click_h1,
+            test_click_pre,
+            test_click_ol,
+            test_click_ul,
+            test_click_a,
+            test_click_img,
+            test_click_video,
+            test_click_canvas,
+            test_click_progress,
+            test_click_textarea,
+            test_click_button,
+            test_click_svg,
+            test_click_input_range,
+            test_click_input_button,
+            test_click_input_submit,
+            test_click_input_reset,
+            test_click_input_checkbox,
+            test_click_input_radio,
+            test_click_input_file,
+            test_click_input_password,
+            test_click_input_text,
+            test_click_input_number,
+            test_click_input_tel,
+            test_click_input_url,
+            test_click_input_email,
+            test_click_input_search,
+            test_click_input_image
         ];
 
         for (var i = 0; i < user_input_tests.length; i++) {
@@ -275,18 +274,6 @@ function test_click_video() {
     tools.assert_equals(value, "video", "test_click_video", session);
 }
 
-function test_click_audio() {
-    driver.get(session, tools.get_current_directory_name() + "/user_input/res/ms-allElements2.html");
-
-    var element = driver.element_by_id(session, "audio");
-    element.click();
-
-    value = JSON.parse(driver.get_alert_text(session)).value;
-    driver.accept_alert(session);
-
-    tools.assert_equals(value, "audio", "test_click_audio", session);
-}
-
 function test_click_canvas() {
     driver.get(session, tools.get_current_directory_name() + "/user_input/res/ms-allElements2.html");
 
@@ -429,6 +416,9 @@ function test_click_input_file() {
     //driver.accept_alert(session);
 
     //tools.assert_equals(value, "input_file", "test_click_input_file", session);
+
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_click_input_file", session, "unknown");
 }
 
 function test_click_input_password() {
@@ -506,7 +496,7 @@ function test_click_input_email() {
 function test_click_input_search() {
     driver.get(session, tools.get_current_directory_name() + "/user_input/res/ms-allElements2.html");
 
-    var element = driver.element_by_id(session, "input_email");
+    var element = driver.element_by_id(session, "input_search");
     element.click();
 
     value = JSON.parse(driver.get_alert_text(session)).value;

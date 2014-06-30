@@ -51,14 +51,14 @@ function initialize() {
         if (session_id) {
             session.session_id = session_id;
 
-            //cookie.run_all_tests(session);
-            //ecmascript.run_all_tests(session);
+            cookie.run_all_tests(session);
+            ecmascript.run_all_tests(session);
             elements.run_all_tests(session);
-            //javascript.run_all_tests(session);
-            //modal.run_all_tests(session);
-            //navigation.run_all_tests(session);
-            //timeouts.run_all_tests(session);
-            //user_input.run_all_tests(session);
+            javascript.run_all_tests(session);
+            modal.run_all_tests(session);
+            navigation.run_all_tests(session);
+            timeouts.run_all_tests(session);
+            user_input.run_all_tests(session);
 
             driver.quit(session);
 
