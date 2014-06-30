@@ -108,7 +108,6 @@ module.exports = {
 
             //ms-isSelected-staleElementReferenceTests
             test_remove_child,
-            test_remove_child2,
             test_delete_caption,
             test_delete_cell,
             test_delete_contents,
@@ -799,7 +798,7 @@ function test_find_attribute_with_negative_numeric_value() {
     tools.assert_equals("-9", attribute, "test_find_attribute_with_negative_numeric_value", session);
 }
 
-function test_remove_child() {
+function test_remove_child(){
     driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-RemoveChild.html");
 
     var element = driver.element_by_id(session, "test");
@@ -808,20 +807,6 @@ function test_remove_child() {
     var response = driver.get_displayed(session, element.index);
 
     tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_remove_child", session);
-}
-
-function test_remove_child2() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-RemoveChild.html");
-
-    var element = driver.element_by_id(session, "test");
-
-    setTimeout(
-        function(){
-            driver.execute(session, "removeElement()");
-            var response = driver.get_displayed(session, element.index);
-
-            tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_remove_child", session);
-        }, 1000);
 }
 
 function test_delete_caption() {
