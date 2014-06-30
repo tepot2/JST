@@ -109,6 +109,21 @@ module.exports = {
             //ms-isSelected-staleElementReferenceTests
             test_remove_child,
             test_delete_caption,
+            test_delete_cell,
+            test_delete_contents,
+            test_delete_row,
+            test_delete_tfoot,
+            test_delete_thead,
+            test_document_write,
+            test_extract_contents,
+            test_inner_html,
+            test_navigate,
+            test_remove,
+            test_remove_node,
+            test_replace_child,
+            test_replace_node,
+            test_swap_node,
+
 
             //ms-selectedTest
             test_selected_trues,
@@ -808,6 +823,183 @@ function test_delete_caption() {
     var response = driver.get_displayed(session, element.index);
 
     tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_delete_caption", session);
+}
+
+function test_delete_cell() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-DeleteCell.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_delete_cell", session);
+}
+
+function test_delete_contents() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-DeleteContents.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_delete_contents", session);
+}
+
+function test_delete_row() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-DeleteRow.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_delete_row", session);
+}
+
+function test_delete_tfoot() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-DeleteTFoot.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_delete_tfoot", session);
+}
+
+function test_delete_thead() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-DeleteTHead.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_delete_thead", session);
+}
+
+function test_document_write() {
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-DocumentWrite.html");
+
+    //var element = driver.element_by_id(session, "test");
+
+    //driver.execute(session, "removeElement()");
+    //var response = driver.get_displayed(session, element.index);
+
+    //tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_document_write", session);
+
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_document_write", session, "test unfinished");
+}
+
+function test_extract_contents() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-ExtractContents.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_extract_contents", session);
+}
+
+function test_inner_html() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-InnerHTML.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_inner_html", session);
+}
+
+function test_navigate() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-Navigate.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_navigate", session);
+}
+
+function test_navigate() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-Navigate.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_navigate", session);
+}
+
+function test_remove() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-Remove.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_remove", session);
+}
+
+function test_remove_node() {
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-RemoveNode.html");
+
+    //var element = driver.element_by_id(session, "test");
+
+    //driver.execute(session, "removeElement()");
+    //var response = driver.get_displayed(session, element.index);
+
+    //tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_remove_node", session);
+
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_remove_node", session, "missing .html file");
+}
+
+function test_replace_child() {
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-ReplaceChild.html");
+
+    var element = driver.element_by_id(session, "test");
+
+    driver.execute(session, "removeElement()");
+    var response = driver.get_displayed(session, element.index);
+
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_replace_child", session);
+}
+
+function test_replace_node() {
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-ReplaceNode.html");
+
+    //var element = driver.element_by_id(session, "test");
+
+    //driver.execute(session, "removeElement()");
+    //var response = driver.get_displayed(session, element.index);
+
+    //tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_replace_node", session);
+
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_replace_node", session, "missing .html file");
+}
+
+function test_swap_node() {
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-SwapNode.html");
+
+    //var element = driver.element_by_id(session, "test");
+
+    //driver.execute(session, "removeElement()");
+    //var response = driver.get_displayed(session, element.index);
+
+    //tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_swap_node", session);
+
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_swap_node", session, "missing .html file");
 }
 
 function test_selected_trues() {
