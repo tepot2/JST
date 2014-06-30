@@ -90,10 +90,10 @@ module.exports = {
 
             //ms-getElementAttribute
             test_find_span_element_in_first_level_under_body,
-            //test_find_an_element_by_href_attribute,
-            //test_find_an_attribute_by_name_with_false_value,
+            test_find_an_element_by_href_attribute,
+            test_find_an_attribute_by_name_with_false_value,
             test_find_an_attribute_myattr,
-            //test_find_an_attribute_in_an_element_with_a_long_id,
+            test_find_an_attribute_in_an_element_with_a_long_id,
             test_find_a_value_element_in_option_element_that_doesnt_have_a_value_attribute,
             test_find_value_for_a_style_attribute_in_option_element,
             test_find_attribute_that_does_not_exist,
@@ -107,19 +107,23 @@ module.exports = {
             test_find_attribute_with_negative_numeric_value,
 
             //ms-isSelected-staleElementReferenceTests
-            //test_remove_child,
-            //test_delete_caption,
+            test_remove_child,
+            test_delete_caption,
 
             //ms-selectedTest
-            //test_selected_trues,
-            //test_selected_falses,
+            test_selected_trues,
+            test_selected_falses,
+
+            //ms-selectedTest
+            test_selected_trues,
+            test_selected_falses,
 
             //ms-findElement_css
             test_find_element_by_css_body,
-            //test_find_element_by_css_image,
+            test_find_element_by_css_image,
             test_find_element_by_css_p,
             test_find_element_by_css_compound,
-            //test_find_element_by_css_attribute,
+            test_find_element_by_css_attribute,
             test_find_element_by_css_parent,
         ];
 
