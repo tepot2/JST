@@ -10,105 +10,104 @@ module.exports = {
         session = new_session;
 
         var elements_tests = [
-            ////element_location/element_location_test.py
-            //test_find_element_by_id,
-            //test_find_element_by_name,
-            //test_find_element_by_css_selector,
-            //test_find_element_by_link_text,
-            //test_find_element_by_partial_link_text,
-            //test_find_element_by_xpath,
+            //element_location/element_location_test.py
+            test_find_element_by_id,
+            test_find_element_by_name,
+            test_find_element_by_css_selector,
+            test_find_element_by_link_text,
+            test_find_element_by_partial_link_text,
+            test_find_element_by_xpath,
 
-            ////element_state/method_test.py
-            //test_get_element_attribute,
-            //test_style_attribute,
-            //test_color_serialization_of_style_attribute,
-            //test_true_if_boolean_attribute_present,
-            //test_none_if_boolean_attribute_absent,
-            //test_option_with_attribute_value,
-            //test_option_without_value_attribute,
-            //test_a_href_attribute,
-            //test_img_src_attribute,
-            //test_custom_attribute,
-            //test_attribute_not_present,
+            //element_state/method_test.py
+            test_get_element_attribute,
+            test_style_attribute,
+            test_color_serialization_of_style_attribute,
+            test_true_if_boolean_attribute_present,
+            test_none_if_boolean_attribute_absent,
+            test_option_with_attribute_value,
+            test_option_without_value_attribute,
+            test_a_href_attribute,
+            test_img_src_attribute,
+            test_custom_attribute,
+            test_attribute_not_present,
 
-            ////element_state/visibility_test.py
-            //test_0x0_pixel_element_is_not_visible,
-            //test_0x0_pixel_text_node_is_visible,
-            //test_1x1_pixel_element,
-            //test_zero_sized_element_is_shown_if_decendant_has_size,
-            //test_input_type_hidden_is_never_visible,
-            //test_input_morphs_into_hidden,
-            //test_parent_node_visible_when_all_children_are_absolutely_positioned_and_overflow_is_hidden,
-            //test_parent_of_absolutely_positioned_elements_visible_where_ancestor_overflow_is_hidden,
-            //test_element_hidden_by_overflow_x_y_hidden,
-            //test_element_hidden_by_overflow_x_y_scroll,
-            //test_element_hidden_by_overflow_x_y_auto,
-            //test_element_hidden_by_overflow_y_x_hidden,
-            //test_element_hidden_by_overflow_y_x_scroll,
-            //test_element_hidden_by_overflow_y_x_auto,
-            //test_parent_node_visible_when_all_children_are_absolutely_position_and_overflow_is_hidden,
-            //test_element_scrollable_by_overflow_x_is_visible,
-            //test_element_scrollable_by_overflow_x_and_y_is_visible,
-            //test_element_scrollable_by_overflow_y_is_visible,
-            //test_element_outside_viewport,
-            //test_element_dynamically_moved_outside_viewport,
-            //test_element_hidden_by_other_element,
-            //test_element_moved_outside_viewport_by_transform,
-            //test_element_moved_behind_other_element_by_transform,
-            //test_text_with_same_color_as_background,
-            //test_text_with_same_color_as_parent_background,
-            //test_text_with_matching_color_and_background,
-            //test_element_with_same_color_as_background,
-            //test_element_with_same_color_as_parent_background,
-            //test_implicit,
-            //test_empty,
-            //test_visibility_hidden,
-            //test_overflow_hidden,
-            //test_display_block,
-            //test_display_none,
-            //test_display_none_hides_child_node,
-            //test_display_none_hides_child_node_link,
-            //test_display_none_hides_child_node_paragraph,
-            //test_display_none_on_parent_takes_presedence,
-            //test_display_none_on_parent_takes_presedence_over_visibility_visible,
-            //test_display_none_hidden_dynamically,
-            //test_element_state_hidden,
-            //test_element_state_visible,
-            //test_visibility_hidden_hides_child_node,
-            //test_visibility_hidden_hides_child_node_link,
-            //test_visibility_hidden_hides_child_node_paragraph,
-            //test_visibility_hidden_on_child_takes_presedence,
-            //test_visibility_hidden_on_parent_takes_presedence_over_display_block,
-            //test_visibility_hidden_set_dynamically,
-            //test_should_show_element_not_visible_with_hidden_attribute,
-            //test_should_show_element_not_visible_when_parent_element_has_hidden_attribute,
-            //test_input_hidden_is_unclickable,
-            //test_hidden_input_checkbox_is_untogglable,
-            //test_typing_in_hidden_input_is_impossible,
-            //test_element_partially_hidden_by_other_element,
-            //test_element_hidden_by_z_index,
+            //element_state/visibility_test.py
+            test_0x0_pixel_element_is_not_visible,
+            test_0x0_pixel_text_node_is_visible,
+            test_1x1_pixel_element,
+            test_zero_sized_element_is_shown_if_decendant_has_size,
+            test_input_type_hidden_is_never_visible,
+            test_input_morphs_into_hidden,
+            test_parent_node_visible_when_all_children_are_absolutely_positioned_and_overflow_is_hidden,
+            test_parent_of_absolutely_positioned_elements_visible_where_ancestor_overflow_is_hidden,
+            test_element_hidden_by_overflow_x_y_hidden,
+            test_element_hidden_by_overflow_x_y_scroll,
+            test_element_hidden_by_overflow_x_y_auto,
+            test_element_hidden_by_overflow_y_x_hidden,
+            test_element_hidden_by_overflow_y_x_scroll,
+            test_element_hidden_by_overflow_y_x_auto,
+            test_parent_node_visible_when_all_children_are_absolutely_position_and_overflow_is_hidden,
+            test_element_scrollable_by_overflow_x_is_visible,
+            test_element_scrollable_by_overflow_x_and_y_is_visible,
+            test_element_scrollable_by_overflow_y_is_visible,
+            test_element_outside_viewport,
+            test_element_dynamically_moved_outside_viewport,
+            test_element_hidden_by_other_element,
+            test_element_moved_outside_viewport_by_transform,
+            test_element_moved_behind_other_element_by_transform,
+            test_text_with_same_color_as_background,
+            test_text_with_same_color_as_parent_background,
+            test_text_with_matching_color_and_background,
+            test_element_with_same_color_as_background,
+            test_element_with_same_color_as_parent_background,
+            test_implicit,
+            test_empty,
+            test_visibility_hidden,
+            test_overflow_hidden,
+            test_display_block,
+            test_display_none,
+            test_display_none_hides_child_node,
+            test_display_none_hides_child_node_link,
+            test_display_none_hides_child_node_paragraph,
+            test_display_none_on_parent_takes_presedence,
+            test_display_none_on_parent_takes_presedence_over_visibility_visible,
+            test_display_none_hidden_dynamically,
+            test_element_state_hidden,
+            test_element_state_visible,
+            test_visibility_hidden_hides_child_node,
+            test_visibility_hidden_hides_child_node_link,
+            test_visibility_hidden_hides_child_node_paragraph,
+            test_visibility_hidden_on_child_takes_presedence,
+            test_visibility_hidden_on_parent_takes_presedence_over_display_block,
+            test_visibility_hidden_set_dynamically,
+            test_should_show_element_not_visible_with_hidden_attribute,
+            test_should_show_element_not_visible_when_parent_element_has_hidden_attribute,
+            test_input_hidden_is_unclickable,
+            test_hidden_input_checkbox_is_untogglable,
+            test_typing_in_hidden_input_is_impossible,
+            test_element_partially_hidden_by_other_element,
+            test_element_hidden_by_z_index,
 
-            ////ms-getElementAttribute
-            //test_find_span_element_in_first_level_under_body,
-            //test_find_an_element_by_href_attribute,
-            //test_find_an_attribute_by_name_with_false_value,
-            //test_find_an_attribute_myattr,
-            //test_find_an_attribute_in_an_element_with_a_long_id,
-            //test_find_a_value_element_in_option_element_that_doesnt_have_a_value_attribute,
-            //test_find_value_for_a_style_attribute_in_option_element,
-            //test_find_attribute_that_does_not_exist,
-            //test_find_attribute_accesskey,
-            //test_multiple_elements_with_same_class_nested_attribute,
-            //test_find_attribute_with_special_characters,
-            //test_find_attribute_with_special_char_name_and_value,
-            //test_find_attribute_with_numeric_name,
-            //test_find_attribute_with_numeric_value,
-            //test_find_attribute_with_negative_numeric_name,
-            //test_find_attribute_with_negative_numeric_value,
+            //ms-getElementAttribute
+            test_find_span_element_in_first_level_under_body,
+            test_find_an_element_by_href_attribute,
+            test_find_an_attribute_by_name_with_false_value,
+            test_find_an_attribute_myattr,
+            test_find_an_attribute_in_an_element_with_a_long_id,
+            test_find_a_value_element_in_option_element_that_doesnt_have_a_value_attribute,
+            test_find_value_for_a_style_attribute_in_option_element,
+            test_find_attribute_that_does_not_exist,
+            test_find_attribute_accesskey,
+            test_multiple_elements_with_same_class_nested_attribute,
+            test_find_attribute_with_special_characters,
+            test_find_attribute_with_special_char_name_and_value,
+            test_find_attribute_with_numeric_name,
+            test_find_attribute_with_numeric_value,
+            test_find_attribute_with_negative_numeric_name,
+            test_find_attribute_with_negative_numeric_value,
 
             //ms-isSelected-staleElementReferenceTests
             test_remove_child,
-            test_remove_child2,
             test_delete_caption,
             test_delete_cell,
             test_delete_contents,
@@ -125,16 +124,22 @@ module.exports = {
             test_replace_node,
             test_swap_node,
 
-            ////ms-selectedTest
-            //test_selected_trues,
 
-            ////ms-findElement_css
-            //test_find_element_by_css_body,
-            //test_find_element_by_css_image,
-            //test_find_element_by_css_p,
-            //test_find_element_by_css_compound,
-            //test_find_element_by_css_attribute,
-            //test_find_element_by_css_parent,
+            //ms-selectedTest
+            test_selected_trues,
+            test_selected_falses,
+
+            //ms-selectedTest
+            test_selected_trues,
+            test_selected_falses,
+
+            //ms-findElement_css
+            test_find_element_by_css_body,
+            test_find_element_by_css_image,
+            test_find_element_by_css_p,
+            test_find_element_by_css_compound,
+            test_find_element_by_css_attribute,
+            test_find_element_by_css_parent,
         ];
 
         for (var i = 0; i < elements_tests.length; i++) {
@@ -798,7 +803,7 @@ function test_find_attribute_with_negative_numeric_value() {
     tools.assert_equals("-9", attribute, "test_find_attribute_with_negative_numeric_value", session);
 }
 
-function test_remove_child() {
+function test_remove_child(){
     driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-RemoveChild.html");
 
     var element = driver.element_by_id(session, "test");
@@ -807,20 +812,6 @@ function test_remove_child() {
     var response = driver.get_displayed(session, element.index);
 
     tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_remove_child", session);
-}
-
-function test_remove_child2() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-RemoveChild.html");
-
-    var element = driver.element_by_id(session, "test");
-
-    setTimeout(
-        function(){
-            driver.execute(session, "removeElement()");
-            var response = driver.get_displayed(session, element.index);
-
-            tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_remove_child", session);
-        }, 1000);
 }
 
 function test_delete_caption() {
