@@ -40,7 +40,7 @@ module.exports = {
         //    "name": "IE",
         //    "parameters": {
         //        "desiredCapabilities": {
-        //            "browserName": "IEDC"
+        //            "browserName": "Internet Explorer"
         //        },
         //    },
         //    "port": 17756,

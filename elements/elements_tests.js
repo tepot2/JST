@@ -90,10 +90,7 @@ module.exports = {
 
             //ms-getElementAttribute
             test_find_span_element_in_first_level_under_body,
-            test_find_an_element_by_href_attribute,
-            test_find_an_attribute_by_name_with_false_value,
             test_find_an_attribute_myattr,
-            test_find_an_attribute_in_an_element_with_a_long_id,
             test_find_a_value_element_in_option_element_that_doesnt_have_a_value_attribute,
             test_find_value_for_a_style_attribute_in_option_element,
             test_find_attribute_that_does_not_exist,
@@ -124,20 +121,10 @@ module.exports = {
             test_replace_node,
             test_swap_node,
 
-            //ms-selectedTest
-            test_selected_trues,
-            test_selected_falses,
-
-            //ms-selectedTest
-            test_selected_trues,
-            test_selected_falses,
-
             //ms-findElement_css
             test_find_element_by_css_body,
-            test_find_element_by_css_image,
             test_find_element_by_css_p,
             test_find_element_by_css_compound,
-            test_find_element_by_css_attribute,
             test_find_element_by_css_parent,
         ];
 
@@ -672,26 +659,6 @@ function test_find_span_element_in_first_level_under_body() {
     tools.assert_equals("div-name", attribute, "test_find_span_element_in_first_level_under_body", session);
 }
 
-function test_find_an_element_by_href_attribute() {
-    //driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
-
-    //var element = driver.element_by_id(session, "my-id-link");
-    //var attribute = element.get_attribute("href");
-
-    //tools.assert_equals("www.bing.com", attribute, "test_find_an_element_by_href_attribute", session);
-    var logger_instance = new logger.logger;
-    logger_instance.skip("test_find_an_element_by_href_attribute", session, "ambiguity");
-}
-
-function test_find_an_attribute_by_name_with_false_value() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
-
-    var element = driver.element_by_id(session, "my-id-link");
-    var attribute = element.get_attribute("name");
-
-    tools.assert_equals("false", attribute, "test_find_an_attribute_by_name_with_false_value", session);
-}
-
 function test_find_an_attribute_myattr() {
     driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
 
@@ -699,15 +666,6 @@ function test_find_an_attribute_myattr() {
     var attribute = element.get_attribute("myAttr");
 
     tools.assert_equals("myval", attribute, "test_find_an_attribute_myattr", session);
-}
-
-function test_find_an_attribute_in_an_element_with_a_long_id() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
-
-    var element = driver.element_by_id(session, "my_id_with_a_relatively_long_name_test");
-    var attribute = element.get_attribute("class");
-
-    tools.assert_equals("my_id_with_a_relatively_long_name_test_class", attribute, "test_find_an_attribute_in_an_element_with_a_long_id", session);
 }
 
 function test_find_a_value_element_in_option_element_that_doesnt_have_a_value_attribute() {
@@ -1008,40 +966,12 @@ function test_swap_node() {
     logger_instance.skip("test_swap_node", session, "missing .html file");
 }
 
-function test_selected_trues() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-selectedTest.html");
-
-    for (var i = 1; i <= 15; i++) {
-        var element = driver.element_by_id(session, "pass-" + i);
-
-        tools.assert_equals(element.is_selected(), true, "test_selected_true (" + i + ")", session);
-    }
-}
-
-function test_selected_falses() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-selectedTest.html");
-
-    for (var i = 1; i <= 18; i++) {
-        var element = driver.element_by_id(session, "fail-" + i);
-
-        tools.assert_equals(element.is_selected(), false, "test_selected_false (" + i + ")", session);
-    }
-}
-
 function test_find_element_by_css_body() {
     driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-findElement(s).html");
 
     var element = driver.element_by_css_selector(session, "body");
 
     tools.assert_equals(element.get_attribute("id"), "body", "test_find_element_by_css_body", session);
-}
-
-function test_find_element_by_css_image() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-findElement(s).html");
-
-    var element = driver.element_by_css_selector(session, "img");
-
-    tools.assert_equals(element.get_attribute("id"), "image1", "test_find_element_by_css_image", session);
 }
 
 function test_find_element_by_css_p() {
@@ -1058,14 +988,6 @@ function test_find_element_by_css_compound() {
     var element = driver.element_by_css_selector(session, "span,p");
 
     tools.assert_equals(element.get_attribute("id"), "p1", "test_find_element_by_css_compound", session);
-}
-
-function test_find_element_by_css_attribute() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-findElement(s).html");
-
-    var element = driver.element_by_css_selector(session, ".container #div1-1_div1 a[target='_blank']");
-
-    tools.assert_equals(element.get_attribute("id"), "blank_link", "test_find_element_by_css_attribute", session);
 }
 
 function test_find_element_by_css_parent() {
