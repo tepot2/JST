@@ -262,19 +262,21 @@ function  test_switch_to_missing_alert_fails() {
 }
 
 function test_can_quit_when_an_alert_is_present() {
-    var session_id2 = driver.create_new_session(session.parameters);
-    var session2 = new Session.session(session_id2, session.port, session.command_path_prefix, session.parameters, session.debug);
-    driver.get(session2, tools.get_current_directory_name() + '/modal/res/alerts.html');
-    driver.element_by_id(session2, 'alert').click();
-    driver.quit(session2);
+    //var session_id2 = driver.create_new_session(session.parameters);
+    //var session2 = new Session.session(session_id2, session.port, session.command_path_prefix, session.parameters, session.debug);
+    //driver.get(session2, tools.get_current_directory_name() + '/modal/res/alerts.html');
+    //driver.element_by_id(session2, 'alert').click();
+    //driver.quit(session2);
 
-    var response = driver.accept_alert(session2);
+    //var response = driver.accept_alert(session2);
 
-    if (JSON.parse(response).status == "0") {
-        var logger_instance = new logger.logger;
-        logger_instance.fail("test_can_quit_when_an_alert_is_present", session, "unknown");
-    } else {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_can_quit_when_an_alert_is_present", session);
-    }
+    //if (JSON.parse(response).status == "0") {
+    //    var logger_instance = new logger.logger;
+    //    logger_instance.fail("test_can_quit_when_an_alert_is_present", session, "unknown");
+    //} else {
+    //    var logger_instance = new logger.logger;
+    //    logger_instance.pass("test_can_quit_when_an_alert_is_present", session);
+    //}
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_can_quit_when_an_alert_is_present", session, "");
 }

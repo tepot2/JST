@@ -28,7 +28,7 @@ module.exports = {
             test_return_object_literal_with_dom_element_property,
             test_scripts_execute_in_anonymous_function_and_do_not_pollute_global_scope,
             test_scripts_can_modify_context_window_object,
-            test_that_ecmascript_returns_document_title
+            test_that_ecmascript_returns_document_title,
         ];
 
         for (var i = 0; i < javascript_tests.length; i++) {

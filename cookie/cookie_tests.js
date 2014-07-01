@@ -15,7 +15,7 @@ module.exports = {
             test_cookies_should_allow_secure_to_be_set,
             test_secure_defaults_to_false,
             test_should_throw_an_exception_when_semicolon_exists_in_the_cookie_attribute,
-            test_should_throw_an_exception_the_name_is_null
+            test_should_throw_an_exception_if_the_name_is_null,
         ];
 
         for (var i = 0; i < cookie_tests.length; i++) {
@@ -108,7 +108,7 @@ function  test_should_throw_an_exception_when_semicolon_exists_in_the_cookie_att
     }
 }
 
-function  test_should_throw_an_exception_the_name_is_null() {
+function  test_should_throw_an_exception_if_the_name_is_null() {
     driver.get(session, tools.get_current_directory_name() + "/cookie/res/cookie_container.html");
 
     new_cookie = JSON.stringify({
@@ -122,9 +122,9 @@ function  test_should_throw_an_exception_the_name_is_null() {
     var result = JSON.parse(driver.set_cookie(session, new_cookie));
     if (result.status == "0") {
         var logger_instance = new logger.logger;
-        logger_instance.fail("test_should_throw_an_exception_the_name_is_null", session, "No exception was thrown");
+        logger_instance.fail("test_should_throw_an_exception_if_the_name_is_null", session, "No exception was thrown");
     } else {
         var logger_instance = new logger.logger;
-        logger_instance.pass("test_should_throw_an_exception_the_name_is_null", session);
+        logger_instance.pass("test_should_throw_an_exception_if_the_name_is_null", session);
     }
 }

@@ -19,7 +19,7 @@ module.exports = {
             test_find_element_by_xpath,
 
             //element_state/method_test.py
-            test_get_element_attribute,
+            test_get_element_id_attribute,
             test_style_attribute,
             test_color_serialization_of_style_attribute,
             test_true_if_boolean_attribute_present,
@@ -34,7 +34,7 @@ module.exports = {
             //element_state/visibility_test.py
             test_0x0_pixel_element_is_not_visible,
             test_0x0_pixel_text_node_is_visible,
-            test_1x1_pixel_element,
+            test_1x1_pixel_element_is_visible,
             test_zero_sized_element_is_shown_if_decendant_has_size,
             test_input_type_hidden_is_never_visible,
             test_input_morphs_into_hidden,
@@ -60,8 +60,8 @@ module.exports = {
             test_text_with_matching_color_and_background,
             test_element_with_same_color_as_background,
             test_element_with_same_color_as_parent_background,
-            test_implicit,
-            test_empty,
+            test_body_tag_omitted,
+            test_body_tag_empty,
             test_visibility_hidden,
             test_overflow_hidden,
             test_display_block,
@@ -189,7 +189,7 @@ function test_find_element_by_xpath() {
     tools.assert_equals("element1", element.get_attribute("attr"), "test_find_element_by_xpath", session);
 }
 
-function test_get_element_attribute() {
+function test_get_element_id_attribute() {
     driver.get(session, tools.get_current_directory_name() + "/elements/res/element-with-id-attribute.html");
     var element = driver.element_by_css_selector(session, "div");
     tools.assert_equals("myId", element.get_attribute("id"), "test_get_element_attribute", session);
@@ -203,7 +203,7 @@ function test_style_attribute() {
     //tools.assert_equals(expected_style, element.get_attribute("style"), "test_style_attribute", session);
 
     var logger_instance = new logger.logger;
-    logger_instance.fail(tools.get_name_of_function(elements_tests[i]), session, "Unfinished test");
+    logger_instance.skip("test_style_attribute", session, "Unfinished test");
 }
 
 function test_color_serialization_of_style_attribute() {
@@ -245,15 +245,19 @@ function test_option_without_value_attribute() {
 }
 
 function test_a_href_attribute() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/a-with-href-attribute.html");
-    var element = driver.element_by_css_selector(session, "a");
-    tools.assert_equals("file:///path#fragment", element.get_attribute("href"), "test_a_href_attribute", session);
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/a-with-href-attribute.html");
+    //var element = driver.element_by_css_selector(session, "a");
+    //tools.assert_equals("file:///path#fragment", element.get_attribute("href"), "test_a_href_attribute", session);
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_a_href_attribute", session, "ambiguity");
 }
 
 function test_img_src_attribute() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/img-with-src-attribute.html");
-    var element = driver.element_by_css_selector(session, "img");
-    tools.assert_equals("file:///images/blue.png", element.get_attribute("src"), "test_img_src_attribute", session);
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/img-with-src-attribute.html");
+    //var element = driver.element_by_css_selector(session, "img");
+    //tools.assert_equals("file:///images/blue.png", element.get_attribute("src"), "test_img_src_attribute", session);
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_img_src_attribute", session, "ambiguity");
 }
 
 function test_custom_attribute() {
@@ -281,13 +285,12 @@ function test_0x0_pixel_text_node_is_visible() {
     //tools.assert_true(element.is_displayed(), "test_0x0_pixel_text_node_is_visible", session);
     var logger_instance = new logger.logger;
     logger_instance.skip("test_0x0_pixel_text_node_is_visible", session, "missing .html file");
-
 }
 
-function test_1x1_pixel_element() {
+function test_1x1_pixel_element_is_visible() {
     driver.get(session, tools.get_current_directory_name() + "/elements/res/1x1-pixels.html");
     var element = driver.element_by_css_selector(session, "p");
-    tools.assert_true(element.is_displayed(), "test_1x1_pixel_element", session);
+    tools.assert_true(element.is_displayed(), "test_1x1_pixel_element_is_visible", session);
 }
 
 function test_zero_sized_element_is_shown_if_decendant_has_size() {
@@ -316,8 +319,8 @@ function test_parent_node_visible_when_all_children_are_absolutely_positioned_an
 }
 
 function  test_parent_of_absolutely_positioned_elements_visible_where_ancestor_overflow_is_hidden() {
-    //When a parent's ancestor hides any overflow, absolutely positioned var child elements are
-    //still visible.  The var parent container is also considered visible by webdriver for this
+    //When a parent's ancestor hides any overflow, absolutely positioned child elements are
+    //still visible. The parent container is also considered visible by webdriver for this
     //reason because it is interactable.
 
     driver.get(session, tools.get_current_directory_name() + "/elements/res/absolute-children-ancestor-hidden-overflow.html");
@@ -470,16 +473,18 @@ function  test_element_with_same_color_as_parent_background() {
     tools.assert_false(hidden.is_displayed(), "test_element_with_same_color_as_parent_background", session);
 }
 
-function  test_implicit() {
+//test_body_tag_omitted replaces test_implicit
+function  test_body_tag_omitted() {
     driver.get(session, tools.get_current_directory_name() + "/elements/res/body_implicit.html");
     var body = driver.element_by_css_selector(session, "body");
-    tools.assert_true(body.is_displayed(), "test_implicit", session);
+    tools.assert_true(body.is_displayed(), "test_body_tag_omitted", session);
 }
 
-function  test_empty() {
+//test_body_tag_empty replaces test_empty
+function test_body_tag_empty() {
     driver.get(session, tools.get_current_directory_name() + "/elements/res/body_empty.html");
     var body = driver.element_by_css_selector(session, "body");
-    tools.assert_true(body.is_displayed(), "test_empty", session);
+    tools.assert_true(body.is_displayed(), "test_body_tag_empty", session);
 }
 
 function  test_visibility_hidden() {
@@ -664,12 +669,14 @@ function test_find_span_element_in_first_level_under_body() {
 }
 
 function test_find_an_element_by_href_attribute() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-getElementAttribute.html");
 
-    var element = driver.element_by_id(session, "my-id-link");
-    var attribute = element.get_attribute("href");
+    //var element = driver.element_by_id(session, "my-id-link");
+    //var attribute = element.get_attribute("href");
 
-    tools.assert_equals("www.bing.com", attribute, "test_find_an_element_by_href_attribute", session);
+    //tools.assert_equals("www.bing.com", attribute, "test_find_an_element_by_href_attribute", session);
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_find_an_element_by_href_attribute", session, "ambiguity");
 }
 
 function test_find_an_attribute_by_name_with_false_value() {

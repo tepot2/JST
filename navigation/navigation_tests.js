@@ -160,7 +160,7 @@ function test_get_fragment_in_document() {
 //test_navigate_to_site_with_self_signed_cert replaces testCanNavigateToSiteWithSelfSignedCert
 function test_navigate_to_site_with_self_signed_cert() {
     var logger_instance = new logger.logger;
-    logger_instance.skip(tools.get_name_of_function(navigation_tests[i]), session, "Test incomplete");
+    logger_instance.skip("test_navigate_to_site_with_self_signed_cert", session, "Test incomplete");
 }
 
 //test_static_page_refresh replaces the first half of test_refreshPage
