@@ -31,3 +31,16 @@ For convenience when accepting new tests, you can add a _config_local.js_ file
 to the root directory, and specify your configuration preferences there. This 
 will take preference over the _config.js_ file, but will be ignored by git, 
 allowing you to maintain a configuration environment easily.
+
+## Platforms and Browsers
+This test suite has been tested against Firefox, Internet Explorer, and Chrome.
+Tests can be run against Firefox without modification. In order to test against
+Chrome, download chromedriver.exe 
+(http://code.google.com/p/selenium/wiki/ChromeDriver) and either add it to your
+path or specify its location when you start the selenium server. 
+
+These tests have been run successfully on Windows and Linux (Ubuntu) without 
+modification. If you have difficulty running the tests on any other platform, 
+check the sync_command function of _driver.js_ and the send_request function in
+_http_request.js_, since these deal with forking, file i/o, and process
+arguments, any of which could cause portability issues.
