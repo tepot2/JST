@@ -5,7 +5,7 @@ be accessed with:
     var logger = require(_path_to_this_file);
     var logger_instance = new logger.logger;
 
-As tests are reported pass/fail/skip, the logger will write JSON to logfile.js, which describes
+As tests are reported pass/fail/skip, the logger will write JSON to logfile.json, which describes
 the result. To print these results to the console, call "logger_instance.results();"
 */
 var fs = require('fs');
@@ -18,6 +18,8 @@ module.exports = {
         }
 
         arguments.callee._singletonInstance = this;
+
+        this.first = false;
 
         this.passes = 0;
         this.failures = 0;
@@ -36,7 +38,7 @@ module.exports = {
                 browser: session.parameters.desiredCapabilities.browserName,
                 reason: ""
             }
-            fs.writeSync(fs.openSync("logfile.js", 'a'), ((this.passes + this.failures + this.skips) > 1 ? "," : "") + JSON.stringify(logstring), null, undefined, 0);
+            fs.writeSync(fs.openSync("logfile.json", 'a'), ((this.passes + this.failures + this.skips) > 1 ? ",\n" : "") + JSON.stringify(logstring), null, undefined, 0);
         }
 
         this.fail = function (name, session, reason) {
@@ -48,7 +50,7 @@ module.exports = {
                 browser: session.parameters.desiredCapabilities.browserName,
                 reason: reason
             }
-            fs.writeSync(fs.openSync("logfile.js", 'a'), ((this.passes + this.failures + this.skips) > 1 ? "," : "") + JSON.stringify(logstring), null, undefined, 0);
+            fs.writeSync(fs.openSync("logfile.json", 'a'), ((this.passes + this.failures + this.skips) > 1 ? ",\n" : "") + JSON.stringify(logstring), null, undefined, 0);
         }
 
         this.skip = function (name, session, reason) {
@@ -60,7 +62,7 @@ module.exports = {
                 browser: session.parameters.desiredCapabilities.browserName,
                 reason: reason
             }
-            fs.writeSync(fs.openSync("logfile.js", 'a'), ((this.passes+ this.failures + this.skips)> 1 ? "," : "") + JSON.stringify(logstring), null, undefined, 0);
+            fs.writeSync(fs.openSync("logfile.json", 'a'), ((this.passes+ this.failures + this.skips)> 1 ? ",\n" : "") + JSON.stringify(logstring), null, undefined, 0);
         }
 
         this.results = function (name) {
@@ -86,6 +88,8 @@ module.exports = {
         }
 
         this.reset = function () {
+            fs.writeSync(fs.openSync("logfile.json", 'a'), ",\n\n", null, undefined, 0);
+
             this.passes = 0;
             this.failures = 0;
             this.skips = 0;
@@ -96,11 +100,11 @@ module.exports = {
         }
 
         this.prepare = function () {
-            fs.writeSync(fs.openSync("logfile.js", 'a'), "[", null, undefined, 0);
+            fs.writeSync(fs.openSync("logfile.json", 'a'), "[", null, undefined, 0);
         }
 
         this.finish = function () {
-            fs.writeSync(fs.openSync("logfile.js", 'a'), "]", null, undefined, 0);
+            fs.writeSync(fs.openSync("logfile.json", 'a'), "]", null, undefined, 0);
         }
     }
 }

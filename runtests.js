@@ -19,7 +19,7 @@ function initialize() {
 
     var fork = require("child_process").fork;
     var config;
-    try{
+    try{//config_local takes precedence
         config = require('./config_local.js');
     } catch (err) {
         config = require('./config.js');
@@ -61,7 +61,10 @@ function initialize() {
             driver.quit(session);
 
             var logger_instance = new logger.logger;
-            logger_instance.results();
+            logger_instance.results(session.name);
+            if (i < config.browsers.length - 1) {//to resolve the fencepost problem with JSON commas
+                logger_instance.reset();
+            }
         } else {
             console.log("New session could not be created. Ensure that the server is running and the port numbers match.")
         }
