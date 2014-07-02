@@ -37,7 +37,9 @@ This test suite has been tested against Firefox, Internet Explorer, and Chrome.
 Tests can be run against Firefox without modification. In order to test against
 Chrome, download chromedriver.exe 
 (http://code.google.com/p/selenium/wiki/ChromeDriver) and either add it to your
-path or specify its location when you start the selenium server. 
+path or specify its location when you start the selenium server. When launching
+the selenium server, use -Dwebdriver.chrome.driver=C:\Path\to\chromedriver.exe 
+to specify the location of chromedriver.
 
 These tests have been run successfully on Windows and Linux (Ubuntu) without 
 modification. If you have difficulty running the tests on any other platform, 
