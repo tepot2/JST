@@ -49,7 +49,7 @@ function test_can_create_a_well_formed_cookie() {
     driver.set_cookie(session, new_cookie);
 
     var logger_instance = new logger.logger;
-    logger_instance.pass("test_should_throw_an_exception_when_semicolon_exists_in_the_cookie_attribute", session);
+    logger_instance.pass("test_can_create_a_well_formed_cookie", session);
 }
 
 function test_cookies_should_allow_secure_to_be_set() {
@@ -67,7 +67,7 @@ function test_cookies_should_allow_secure_to_be_set() {
     driver.set_cookie(session, new_cookie);
 
     var logger_instance = new logger.logger;
-    logger_instance.pass("test_should_throw_an_exception_when_semicolon_exists_in_the_cookie_attribute", session);
+    logger_instance.pass("test_cookies_should_allow_secure_to_be_set", session);
 }
 
 function test_secure_defaults_to_false() {

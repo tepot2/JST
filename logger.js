@@ -63,7 +63,9 @@ module.exports = {
             fs.writeSync(fs.openSync("logfile.js", 'a'), ((this.passes+ this.failures + this.skips)> 1 ? "," : "") + JSON.stringify(logstring), null, undefined, 0);
         }
 
-        this.results = function () {
+        this.results = function (name) {
+            console.log("\nResults for " + name);
+
             var total_tests = this.passes + this.failures + this.skips;
             console.log((this.passes + " tests passed ("+ Math.round(this.passes* 100/total_tests)+"%)").green.underline);
             for (i = 0; i < this.passed_tests.length; i++) {
@@ -81,6 +83,16 @@ module.exports = {
                     console.log(this.skipped_tests[i].yellow);
                 }
             }
+        }
+
+        this.reset = function () {
+            this.passes = 0;
+            this.failures = 0;
+            this.skips = 0;
+
+            this.passed_tests.length = 0;
+            this.failed_tests.length = 0;
+            this.skipped_tests.length = 0;
         }
 
         this.prepare = function () {
