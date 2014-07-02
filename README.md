@@ -20,8 +20,8 @@ browser automation specification known as WebDriver.
    software. By default, the tests will run in Firefox with debugging disabled.
 9. Run the tests with "node runtests.js" (entered in Node.js command prompt).
 
-The results of the tests will be output to the console as well as _logfile.js_,
-which stores all results in JSON.
+The results of the tests will be output to the console as well as 
+_logfile.json_, which stores all results in JSON.
 
 ## Updating configuration
 
