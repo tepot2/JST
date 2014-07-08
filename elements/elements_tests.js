@@ -46,7 +46,6 @@ module.exports = {
             test_element_hidden_by_overflow_y_x_hidden,
             test_element_hidden_by_overflow_y_x_scroll,
             test_element_hidden_by_overflow_y_x_auto,
-            test_parent_node_visible_when_all_children_are_absolutely_position_and_overflow_is_hidden,
             test_element_scrollable_by_overflow_x_is_visible,
             test_element_scrollable_by_overflow_x_and_y_is_visible,
             test_element_scrollable_by_overflow_y_is_visible,
