@@ -113,7 +113,7 @@ module.exports = {
             test_document_write,
             test_extract_contents,
             test_inner_html,
-            test_navigate,
+            test_navigate_stale_element,
             test_remove,
             test_remove_node,
             test_replace_child,
@@ -885,7 +885,7 @@ function test_inner_html() {
     tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_inner_html", session);
 }
 
-function test_navigate() {
+function test_navigate_stale_element() {
     driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-Navigate.html");
 
     var element = driver.element_by_id(session, "test");
@@ -893,7 +893,7 @@ function test_navigate() {
     driver.execute(session, "removeElement()");
     var response = driver.get_displayed(session, element.index);
 
-    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_navigate", session);
+    tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_navigate_stale_element", session);
 }
 
 function test_navigate() {

@@ -16,7 +16,7 @@ module.exports = {
             test_read_only_text_input_element_should_not_clear,
             test_writable_text_area_element_should_clear,
             test_disabled_text_area_element_should_not_clear,
-            test_read_only_text_input_element_should_not_clear,
+            test_read_only_text_area_element_should_not_clear,
             test_content_editable_area_should_clear,
         ];
 
@@ -97,18 +97,18 @@ function test_disabled_text_area_element_should_not_clear() {
 
         if (response.status == "0") {
             var logger_instance = new logger.logger;
-            logger_instance.fail("test_read_only_text_input_element_should_not_clear", "unknown", session);
+            logger_instance.fail("test_disabled_text_area_element_should_not_clear", "unknown", session);
         } else {
             var logger_instance = new logger.logger;
-            logger_instance.pass("test_read_only_text_input_element_should_not_clear", session);
+            logger_instance.pass("test_disabled_text_area_element_should_not_clear", session);
         }
     } catch (err) {
         var logger_instance = new logger.logger;
-        logger_instance.pass("test_read_only_text_input_element_should_not_clear", session);
+        logger_instance.pass("test_disabled_text_area_element_should_not_clear", session);
     }
 }
 
-function test_read_only_text_input_element_should_not_clear() {
+function test_read_only_text_area_element_should_not_clear() {
     driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_readonly_textarea_page.html");
     var element = driver.element_by_id(session, "readOnlyTextArea");
     var response = element.clear();
@@ -117,14 +117,14 @@ function test_read_only_text_input_element_should_not_clear() {
 
         if (response.status == "0") {
             var logger_instance = new logger.logger;
-            logger_instance.fail("test_read_only_text_input_element_should_not_clear", "unknown", session);
+            logger_instance.fail("test_read_only_text_area_element_should_not_clear", "unknown", session);
         } else {
             var logger_instance = new logger.logger;
-            logger_instance.pass("test_read_only_text_input_element_should_not_clear", session);
+            logger_instance.pass("test_read_only_text_area_element_should_not_clear", session);
         }
     } catch (err) {
         var logger_instance = new logger.logger;
-        logger_instance.pass("test_read_only_text_input_element_should_not_clear", session);
+        logger_instance.pass("test_read_only_text_area_element_should_not_clear", session);
     }
 }
 
