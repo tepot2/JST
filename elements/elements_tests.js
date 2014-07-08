@@ -236,19 +236,15 @@ function test_option_without_value_attribute() {
 }
 
 function test_a_href_attribute() {
-    //driver.get(session, tools.get_current_directory_name() + "/elements/res/a-with-href-attribute.html");
-    //var element = driver.element_by_css_selector(session, "a");
-    //tools.assert_equals("file:///path#fragment", element.get_attribute("href"), "test_a_href_attribute", session);
-    var logger_instance = new logger.logger;
-    logger_instance.skip("test_a_href_attribute", session, "ambiguity");
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/a-with-href-attribute.html");
+    var element = driver.element_by_css_selector(session, "a");
+    tools.assert_equals("http://web-platform.test:8000/path#fragment", element.get_attribute("href"), "test_a_href_attribute", session);
 }
 
 function test_img_src_attribute() {
-    //driver.get(session, tools.get_current_directory_name() + "/elements/res/img-with-src-attribute.html");
-    //var element = driver.element_by_css_selector(session, "img");
-    //tools.assert_equals("file:///images/blue.png", element.get_attribute("src"), "test_img_src_attribute", session);
-    var logger_instance = new logger.logger;
-    logger_instance.skip("test_img_src_attribute", session, "ambiguity");
+    driver.get(session, tools.get_current_directory_name() + "/elements/res/img-with-src-attribute.html");
+    var element = driver.element_by_css_selector(session, "img");
+    tools.assert_equals("http://web-platform.test:8000/images/blue.png", element.get_attribute("src"), "test_img_src_attribute", session);
 }
 
 function test_custom_attribute() {
