@@ -261,22 +261,16 @@ function  test_switch_to_missing_alert_fails() {
     }
 }
 
+//this does not test the same behavior as the identically named Python test, since that was not to spec. 
+//See https://dvcs.w3.org/hg/webdriver/raw-file/default/webdriver-spec.html#window.alert-window.prompt-and-window.confirm
 function test_can_quit_when_an_alert_is_present() {
-    //var session_id2 = driver.create_new_session(session.parameters);
-    //var session2 = new Session.session(session_id2, session.port, session.command_path_prefix, session.parameters, session.debug);
-    //driver.get(session2, tools.get_current_directory_name() + '/modal/res/alerts.html');
-    //driver.element_by_id(session2, 'alert').click();
-    //driver.quit(session2);
+    var session2 = new Session.session("", session.name, session.port, session.command_path_prefix, session.parameters, session.debug);
+    var session_id2 = driver.create_new_session(session2);
+    session2.session_id = session_id2;
 
-    //var response = driver.accept_alert(session2);
+    driver.get(session2, tools.get_current_directory_name() + '/modal/res/alerts.html');
+    driver.element_by_id(session2, 'alert').click();
+    var response = driver.quit(session2);
 
-    //if (JSON.parse(response).status == "0") {
-    //    var logger_instance = new logger.logger;
-    //    logger_instance.fail("test_can_quit_when_an_alert_is_present", session, "unknown");
-    //} else {
-    //    var logger_instance = new logger.logger;
-    //    logger_instance.pass("test_can_quit_when_an_alert_is_present", session);
-    //}
-    var logger_instance = new logger.logger;
-    logger_instance.skip("test_can_quit_when_an_alert_is_present", session, "");
+    tools.assert_equals(JSON.parse(response).status, "unexpected alert open", "test_can_quit_when_an_alert_is_present", session);
 }

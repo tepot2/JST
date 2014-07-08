@@ -305,6 +305,7 @@ function test_input_morphs_into_hidden() {
 }
 
 function test_parent_node_visible_when_all_children_are_absolutely_positioned_and_overflow_is_hidden() {
+    //this just passes automatically in the Python
     var logger_instance = new logger.logger;
     logger_instance.skip("test_parent_node_visible_when_all_children_are_absolutely_positioned_and_overflow_is_hidden", session, "unknown");
 }
@@ -382,24 +383,20 @@ function test_element_hidden_by_overflow_y_x_auto() {
     tools.assert_true(pass, "test_element_hidden_by_overflow_y_x_auto", session);
 }
 
-function test_parent_node_visible_when_all_children_are_absolutely_position_and_overflow_is_hidden() {
-    var logger_instance = new logger.logger;
-    logger_instance.skip("test_parent_node_visible_when_all_children_are_absolutely_position_and_overflow_is_hidden", session, "unknown");
-}
-
+//these next three are all automatically passed in the Python
 function test_element_scrollable_by_overflow_x_is_visible() {
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_element_scrollable_by_overflow_x_is_visible", session, "unknown");
+    logger_instance.skip("test_element_scrollable_by_overflow_x_is_visible", session, "test unfinished");
 }
 
 function test_element_scrollable_by_overflow_x_and_y_is_visible() {
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_element_scrollable_by_overflow_x_and_y_is_visible", session, "unknown");
+    logger_instance.skip("test_element_scrollable_by_overflow_x_and_y_is_visible", session, "test unfinished");
 }
 
 function test_element_scrollable_by_overflow_y_is_visible() {
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_element_scrollable_by_overflow_y_is_visible", session, "unknown");
+    logger_instance.skip("test_element_scrollable_by_overflow_y_is_visible", session, "test unfinished");
 }
 
 function test_element_outside_viewport() {
@@ -440,7 +437,7 @@ function test_text_with_same_color_as_background() {
     //var p = driver.element_by_css_selector(session, "p");
     //tools.assert_false(p.is_displayed(), "test_text_with_same_color_as_background", session);
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_img_src_attribute", session, "not to spec");
+    logger_instance.skip("test_text_with_same_color_as_background", session, " test is not to spec");
 }
 
 function test_text_with_same_color_as_parent_background() {
@@ -448,7 +445,7 @@ function test_text_with_same_color_as_parent_background() {
     //var p = driver.element_by_css_selector(session, "p");
     //tools.assert_false(p.is_displayed(), "test_text_with_same_color_as_parent_background", session);
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_img_src_attribute", session, "not to spec");
+    logger_instance.skip("test_text_with_same_color_as_parent_background", session, "test is not to spec");
 }
 
 function test_text_with_matching_color_and_background() {
@@ -456,7 +453,7 @@ function test_text_with_matching_color_and_background() {
     //var p = driver.element_by_css_selector(session, "p");
     //tools.assert_true(p.is_displayed(), "test_text_with_matching_color_and_background", session);
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_img_src_attribute", session, "not to spec");
+    logger_instance.skip("test_text_with_matching_color_and_background", session, "test is not to spec");
 }
 
 function test_element_with_same_color_as_background() {
@@ -464,7 +461,7 @@ function test_element_with_same_color_as_background() {
     //var element = driver.element_by_css_selector(session, "div");
     //tools.assert_false(element.is_displayed(), "test_element_with_same_color_as_background", session);
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_img_src_attribute", session, "not to spec");
+    logger_instance.skip("test_element_with_same_color_as_background", session, "test is not to spec");
 }
 
 function  test_element_with_same_color_as_parent_background() {
@@ -472,7 +469,7 @@ function  test_element_with_same_color_as_parent_background() {
     //var hidden = driver.element_by_id(session, "hidden");
     //tools.assert_false(hidden.is_displayed(), "test_element_with_same_color_as_parent_background", session);
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_img_src_attribute", session, "not to spec");
+    logger_instance.skip("test_element_with_same_color_as_parent_background", session, "test is not to spec");
 }
 
 //test_body_tag_omitted replaces test_implicit
@@ -593,6 +590,7 @@ function test_visibility_hidden_on_child_takes_presedence() {
     tools.assert_true(child.is_displayed(), "test_visibility_hidden_on_child_takes_presedence", session);
 }
 
+//these next two are automatically passed in the Python
 function test_visibility_hidden_on_parent_takes_presedence_over_display_block() {
     var logger_instance = new logger.logger; logger_instance.skip("test_visibility_hidden_on_parent_takes_presedence_over_display_block", session, "unknown");
 }
@@ -855,13 +853,14 @@ function test_delete_thead() {
     tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_delete_thead", session);
 }
 
+//This test calls a javascript function that WebDriver doesn't return from.
 function test_document_write() {
     //driver.get(session, tools.get_current_directory_name() + "/elements/res/ms-DocumentWrite.html");
 
     //var element = driver.element_by_id(session, "test");
 
     //driver.execute(session, "removeElement()");
-    //var response = driver.get_displayed(session, element.index);
+    //var response = driver.get_selected(session, element.index);
 
     //tools.assert_equals(JSON.parse(response).status, "stale element reference", "test_document_write", session);
 
