@@ -118,7 +118,6 @@ function test_navigate_with_header_redirection() {
     tools.assert_equals(tools.get_current_directory_name() + "/navigation/res/empty.html", JSON.parse(driver.get_current_url(session)).value, "test_navigate_with_header_redirection", session);
 }
 
-
 //test_navigate_with_instant_meta_redirect replaces testGetWillFollowMetaRefreshThatRefreshesInstantly
 function test_navigate_with_instant_meta_redirect() {
     //driver.get(session, tools.get_current_directory_name() + "/navigation/res/instant-meta-redirect.html");
@@ -145,12 +144,12 @@ function test_navigate_with_sixty_sec_meta_redirect() {
 function test_get_fragment_in_document() {
     driver.get(session, tools.get_current_directory_name() + "/navigation/res/fragment.html");
 
-    data = driver.execute(session, "state=true", [{}]); //due to a bug in the (firefox) server, an array must always be passed in
+    data = driver.execute(session, "state=true");
     received_json = JSON.parse(data);
 
     driver.get(session, tools.get_current_directory_name() + "/navigation/res/fragment.html#fragment");
 
-    data = driver.execute(session, "return state", [{}]);
+    data = driver.execute(session, "return state");
     received_json = JSON.parse(data);
 
     script_return_value = received_json.value;
