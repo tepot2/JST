@@ -96,13 +96,7 @@ function  test_setting_the_value_of_an_alert_throws() {
 
     var response = driver.set_alert_text(session, 'cheese'); 
 
-    if(JSON.parse(response).status == "0"){
-        var logger_instance = new logger.logger;
-        logger_instance.fail("test_setting_the_value_of_an_alert_throws", session, "unknown");
-    } else {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_setting_the_value_of_an_alert_throws", session);
-    }
+    tools.assert_equals(JSON.parse(response).status, "no such alert", "test_setting_the_value_of_an_alert_throws", session);
     driver.accept_alert(session);
 }
 
@@ -113,13 +107,7 @@ function  test_alert_should_not_allow_additional_commands_if_dismissed() {
     driver.accept_alert(session);
     var response = driver.get_alert_text(session);
 
-    if (JSON.parse(response).status == "0") {
-        var logger_instance = new logger.logger;
-        logger_instance.fail("test_alert_should_not_allow_additional_commands_if_dismissed", session, "unknown");
-    } else {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_alert_should_not_allow_additional_commands_if_dismissed", session);
-    }
+    tools.assert_equals(JSON.parse(response).status, "no such alert", "test_alert_should_not_allow_additional_commands_if_dismissed", session);
 }
 
 function  test_should_allow_user_to_accept_a_prompt() {
@@ -164,13 +152,7 @@ function  test_prompt_should_not_allow_additional_commands_if_dismissed() {
     driver.accept_alert(session);
     var response = driver.get_alert_text(session);
 
-    if (JSON.parse(response).status == "0") {
-        var logger_instance = new logger.logger;
-        logger_instance.fail("test_prompt_should_not_allow_additional_commands_if_dismissed", session, "unknown");
-    } else {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_prompt_should_not_allow_additional_commands_if_dismissed", session);
-    }
+    tools.assert_equals(JSON.parse(response).status, "no such alert", "test_prompt_should_not_allow_additional_commands_if_dismissed", session);
 }
 
 function  test_prompt_should_use_default_value_if_no_keys_sent() {
@@ -212,13 +194,7 @@ function  test_setting_the_value_of_a_confirm_throws() {
 
     var response = driver.set_alert_text(session, 'cheese');
 
-    if (JSON.parse(response).status == "0") {
-        var logger_instance = new logger.logger;
-        logger_instance.fail("test_setting_the_value_of_a_confirm_throws", session, "unknown");
-    } else {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_setting_the_value_of_a_confirm_throws", session);
-    }
+    tools.assert_equals(JSON.parse(response).status, "element not visible", "test_setting_the_value_of_a_confirm_throws", session);
 
     driver.accept_alert(session);
 }
@@ -239,26 +215,14 @@ function  test_confirm_should_not_allow_additional_commands_if_dismissed() {
     driver.accept_alert(session);
     var response = driver.get_alert_text(session);
 
-    if (JSON.parse(response).status == "0") {
-        var logger_instance = new logger.logger;
-        logger_instance.fail("test_confirm_should_not_allow_additional_commands_if_dismissed", session, "unknown");
-    } else {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_confirm_should_not_allow_additional_commands_if_dismissed", session);
-    }
+    tools.assert_equals(JSON.parse(response).status, "no such alert", "test_confirm_should_not_allow_additional_commands_if_dismissed", session);
 }
 
 function  test_switch_to_missing_alert_fails() {
     driver.get(session, tools.get_current_directory_name() + '/modal/res/alerts.html');
     var response = driver.get_alert_text(session);
 
-    if (JSON.parse(response).status == "0") {
-        var logger_instance = new logger.logger;
-        logger_instance.fail("test_switch_to_missing_alert_fails", session, "unknown");
-    } else {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_switch_to_missing_alert_fails", session);
-    }
+    tools.assert_equals(JSON.parse(response).status, "no such alert", "test_switch_to_missing_alert_fails", session);
 }
 
 //this does not test the same behavior as the identically named Python test, since that was not to spec. 
