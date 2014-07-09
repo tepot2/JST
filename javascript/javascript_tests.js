@@ -80,7 +80,7 @@ function test_can_return_strings_from_scripts() {
 
 function test_can_return_booleans_from_scripts() {
     driver.get(session, tools.get_current_directory_name() + "/javascript/res/execute_script_test.html");
-    var pass = JSON.parse(driver.execute(session, "return true;")).value && !JSON.parse(driver.execute(session, "return false;")).value
+    var pass = JSON.parse(driver.execute(session, "return true;")).value && !JSON.parse(driver.execute(session, "return false;")).value;
     tools.assert_true(pass, "test_can_return_booleans_from_scripts", session);
 }
 
@@ -207,32 +207,36 @@ function test_return_object_literal_with_dom_element_property() {
 }
 
 function test_scripts_execute_in_anonymous_function_and_do_not_pollute_global_scope() {
-    driver.get(session, tools.get_current_directory_name() + "/javascript/res/execute_script_test.html");
+    //driver.get(session, tools.get_current_directory_name() + "/javascript/res/execute_script_test.html");
 
-    driver.execute(session, "var x = 1;");
-    tools.assert_equals("undefined", JSON.parse(driver.execute(session, "return typeof x;")).value, "test_scripts_execute_in_anonymous_function_and_do_not_pollute_global_scope", session);
+    //driver.execute(session, "var x = 1;");
+    //tools.assert_equals("undefined", JSON.parse(driver.execute(session, "return typeof x;")).value, "test_scripts_execute_in_anonymous_function_and_do_not_pollute_global_scope", session);
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_text_with_same_color_as_background", session, "test is not to spec");
 }
 
 function test_scripts_can_modify_context_window_object() {
-    driver.get(session, tools.get_current_directory_name() + "/javascript/res/execute_script_test.html");
+    //driver.get(session, tools.get_current_directory_name() + "/javascript/res/execute_script_test.html");
 
-    driver.execute(session, "window.x = 1;");
+    //driver.execute(session, "window.x = 1;");
 
-    var pass = true;
-    pass = pass && ("number" == JSON.parse(driver.execute(session, "return typeof x;")).value);
-    pass = pass && (1 == JSON.parse(driver.execute(session, "return x;")).value);
+    //var pass = true;
+    //pass = pass && ("number" == JSON.parse(driver.execute(session, "return typeof x;")).value);
+    //pass = pass && (1 == JSON.parse(driver.execute(session, "return x;")).value);
 
-    if (pass) {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_scripts_can_modify_context_window_object", session);
-    } else {
-        var logger_instance = new logger.logger;
-        logger_instance.fail("test_scripts_can_modify_context_window_object", session, "unknown");
-    }
+    //if (pass) {
+    //    var logger_instance = new logger.logger;
+    //    logger_instance.pass("test_scripts_can_modify_context_window_object", session);
+    //} else {
+    //    var logger_instance = new logger.logger;
+    //    logger_instance.fail("test_scripts_can_modify_context_window_object", session, "unknown");
+    //}
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_text_with_same_color_as_background", session, "test is not to spec");
 }
 
 function test_that_ecmascript_returns_document_title() {
     driver.get(session, tools.get_current_directory_name() + "/javascript/res/execute_script_test.html");
 
-    tools.assert_equals("executeScript test", JSON.parse(driver.execute(session, "return document.title;")).value, "test_that_ecmascript_returns_document_title", session);
+    tools.assert_equals(JSON.parse(driver.execute(session, "return document.title;")).value, "executeScript test", "test_that_ecmascript_returns_document_title", session);
 }

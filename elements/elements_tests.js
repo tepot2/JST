@@ -407,9 +407,11 @@ function test_element_dynamically_moved_outside_viewport() {
 }
 
 function test_element_hidden_by_other_element() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/element-hidden-by-other-element.html");
-    var hidden = driver.element_by_id(session, "hidden");
-    tools.assert_false(hidden.is_displayed(), "test_element_hidden_by_other_element", session);
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/element-hidden-by-other-element.html");
+    //var hidden = driver.element_by_id(session, "hidden");
+    //tools.assert_false(hidden.is_displayed(), "test_element_hidden_by_other_element", session);
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_text_with_same_color_as_background", session, "test is not to spec");
 }
 
 function test_element_moved_outside_viewport_by_transform() {
@@ -432,7 +434,7 @@ function test_text_with_same_color_as_background() {
     //var p = driver.element_by_css_selector(session, "p");
     //tools.assert_false(p.is_displayed(), "test_text_with_same_color_as_background", session);
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_text_with_same_color_as_background", session, " test is not to spec");
+    logger_instance.skip("test_text_with_same_color_as_background", session, "test is not to spec");
 }
 
 function test_text_with_same_color_as_parent_background() {
@@ -587,11 +589,13 @@ function test_visibility_hidden_on_child_takes_presedence() {
 
 //these next two are automatically passed in the Python
 function test_visibility_hidden_on_parent_takes_presedence_over_display_block() {
-    var logger_instance = new logger.logger; logger_instance.skip("test_visibility_hidden_on_parent_takes_presedence_over_display_block", session, "unknown");
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_visibility_hidden_on_parent_takes_presedence_over_display_block", session, "test incomplete");
 }
 
 function test_visibility_hidden_set_dynamically() {
-    var logger_instance = new logger.logger; logger_instance.skip("test_visibility_hidden_set_dynamically", session, "unknown");
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_visibility_hidden_set_dynamically", session, "test incomplete");
 }
 
 function test_should_show_element_not_visible_with_hidden_attribute() {
@@ -641,17 +645,21 @@ function  test_typing_in_hidden_input_is_impossible() {
 }
 
 function test_element_partially_hidden_by_other_element() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/element-partially-hidden-by-other-element.html");
-    partial = driver.element_by_id(session, "partial");
-    tools.assert_true(partial.is_displayed(), "test_element_partially_hidden_by_other_element", session);
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/element-partially-hidden-by-other-element.html");
+    //partial = driver.element_by_id(session, "partial");
+    //tools.assert_true(partial.is_displayed(), "test_element_partially_hidden_by_other_element", session);
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_element_partially_hidden_by_other_element", session, "test is not to spec");
 }
 
-function test_element_hidden_by_z_index() {
-    driver.get(session, tools.get_current_directory_name() + "/elements/res/element-hidden-by-z-index.html");
-    var overlay = driver.element_by_id(session, "overlay");
-    var hidden = driver.element_by_id(session, "hidden");
+function test_element_partially_hidden_by_other_element() {
+    //driver.get(session, tools.get_current_directory_name() + "/elements/res/element-hidden-by-z-index.html");
+    //var overlay = driver.element_by_id(session, "overlay");
+    //var hidden = driver.element_by_id(session, "hidden");
 
-    tools.assert_true(overlay.is_displayed() && !hidden.is_displayed(), "test_element_hidden_by_z_index", session);
+    //tools.assert_true(overlay.is_displayed() && !hidden.is_displayed(), "test_element_hidden_by_z_index", session);
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_element_partially_hidden_by_other_element", session, "test is not to spec");
 }
 
 function test_find_span_element_in_first_level_under_body() {
