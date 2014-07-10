@@ -411,7 +411,7 @@ function test_element_hidden_by_other_element() {
     //var hidden = driver.element_by_id(session, "hidden");
     //tools.assert_false(hidden.is_displayed(), "test_element_hidden_by_other_element", session);
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_text_with_same_color_as_background", session, "test is not to spec");
+    logger_instance.skip("test_element_hidden_by_other_element", session, "test is not to spec");
 }
 
 function test_element_moved_outside_viewport_by_transform() {
@@ -652,14 +652,14 @@ function test_element_partially_hidden_by_other_element() {
     logger_instance.skip("test_element_partially_hidden_by_other_element", session, "test is not to spec");
 }
 
-function test_element_partially_hidden_by_other_element() {
+function test_element_hidden_by_z_index() {
     //driver.get(session, tools.get_current_directory_name() + "/elements/res/element-hidden-by-z-index.html");
     //var overlay = driver.element_by_id(session, "overlay");
     //var hidden = driver.element_by_id(session, "hidden");
 
     //tools.assert_true(overlay.is_displayed() && !hidden.is_displayed(), "test_element_hidden_by_z_index", session);
     var logger_instance = new logger.logger;
-    logger_instance.skip("test_element_partially_hidden_by_other_element", session, "test is not to spec");
+    logger_instance.skip("test_element_hidden_by_z_index", session, "test is not to spec");
 }
 
 function test_find_span_element_in_first_level_under_body() {

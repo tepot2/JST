@@ -11,7 +11,7 @@ module.exports = {
 
         var timeouts_tests = [
             //implicit_waits_test.py
-            test_element_by_id,
+            test_element_by_id_with_timeout,
             test_should_still_fail_to_find_an_element_when_implicit_waits_are_enabled,
             test_should_return_after_first_attempt_to_find_one_after_disabling_implicit_waits,
             test_should_implicitly_wait_until_at_least_one_element_is_found_when_searching_for_many,
@@ -39,15 +39,14 @@ module.exports = {
     }
 }
 
-function test_element_by_id() {
+function test_element_by_id_with_timeout() {
     driver.get(session, tools.get_current_directory_name() + '/timeouts/res/implicit_waits_tests.html');
     var add = driver.element_by_id(session, "adder");
     driver.set_implicit_timeout(session, 3);
     add.click();
-    driver.element_by_id(session, "box0");
+    var element = driver.element_by_id(session, "box0");
 
-    var logger_instance = new logger.logger;
-    logger_instance.pass("test_element_by_id", session);
+    tools.assert_not_equals(element.index, undefined, "test_element_by_id_with_timeout", session);
 }
 
 function test_should_still_fail_to_find_an_element_when_implicit_waits_are_enabled() {

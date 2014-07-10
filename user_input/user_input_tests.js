@@ -36,6 +36,14 @@ module.exports = {
     }
 }
 
+/*
+Explanation for why all the "should not clear" tests are skipped:
+The spec (https://dvcs.w3.org/hg/webdriver/raw-file/default/webdriver-spec.html#typing_keys) does
+give some limitations on what elements can be typed into/cleared, but doesn't explain which error
+code (if any) should be returned when an invalid element is cleared. Since the error case is 
+non-normative for now, we can't test it.
+*/
+
 function test_writable_text_input_element_should_clear() {
     driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_writable_input_page.html");
     var element = driver.element_by_id(session, "writableTextInput");
@@ -44,41 +52,45 @@ function test_writable_text_input_element_should_clear() {
 }
 
 function test_disabled_text_input_element_should_not_clear() {
-    driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_disabled_input_page.html");
-    var element = driver.element_by_id(session, "disabledTextInput");
-    try {
-        var response = element.clear();
+    //driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_disabled_input_page.html");
+    //var element = driver.element_by_id(session, "disabledTextInput");
+    //try {
+    //    var response = element.clear();
 
-        if (response.status == "0") {
-            var logger_instance = new logger.logger;
-            logger_instance.fail("test_disabled_text_input_element_should_not_clear", session);
-        } else {
-            var logger_instance = new logger.logger;
-            logger_instance.pass("test_disabled_text_input_element_should_not_clear", session);
-        }
-    } catch (err) {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_disabled_text_input_element_should_not_clear", session);
-    }
+    //    if (response.status == "0") {
+    //        var logger_instance = new logger.logger;
+    //        logger_instance.fail("test_disabled_text_input_element_should_not_clear", session);
+    //    } else {
+    //        var logger_instance = new logger.logger;
+    //        logger_instance.pass("test_disabled_text_input_element_should_not_clear", session);
+    //    }
+    //} catch (err) {
+    //    var logger_instance = new logger.logger;
+    //    logger_instance.pass("test_disabled_text_input_element_should_not_clear", session);
+    //}
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_disabled_text_input_element_should_not_clear", session, "test is not to spec");
 }
 
 function test_read_only_text_input_element_should_not_clear() {
-    driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_readonly_input_page.html");
-    var element = driver.element_by_id(session, "readOnlyTextInput");
-    try {
-        var response = element.clear();
+    //driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_readonly_input_page.html");
+    //var element = driver.element_by_id(session, "readOnlyTextInput");
+    //try {
+    //    var response = element.clear();
 
-        if (response.status == "0") {
-            var logger_instance = new logger.logger;
-            logger_instance.fail("test_read_only_text_input_element_should_not_clear", "unknown", session);
-        } else {
-            var logger_instance = new logger.logger;
-            logger_instance.pass("test_read_only_text_input_element_should_not_clear", session);
-        }
-    } catch (err) {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_read_only_text_input_element_should_not_clear", session);
-    }
+    //    if (response.status == "0") {
+    //        var logger_instance = new logger.logger;
+    //        logger_instance.fail("test_read_only_text_input_element_should_not_clear", "unknown", session);
+    //    } else {
+    //        var logger_instance = new logger.logger;
+    //        logger_instance.pass("test_read_only_text_input_element_should_not_clear", session);
+    //    }
+    //} catch (err) {
+    //    var logger_instance = new logger.logger;
+    //    logger_instance.pass("test_read_only_text_input_element_should_not_clear", session);
+    //}
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_read_only_text_input_element_should_not_clear", session, "test is not to spec");
 }
 
 function test_writable_text_area_element_should_clear() {
@@ -89,43 +101,47 @@ function test_writable_text_area_element_should_clear() {
 }
 
 function test_disabled_text_area_element_should_not_clear() {
-    driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_disabled_textarea_page.html");
-    var element = driver.element_by_id(session, "disabledTextArea");
-    var response = element.clear();
-    try {
-        var response = element.clear();
+    //driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_disabled_textarea_page.html");
+    //var element = driver.element_by_id(session, "disabledTextArea");
+    //var response = element.clear();
+    //try {
+    //    var response = element.clear();
 
-        if (response.status == "0") {
-            var logger_instance = new logger.logger;
-            logger_instance.fail("test_disabled_text_area_element_should_not_clear", "unknown", session);
-        } else {
-            var logger_instance = new logger.logger;
-            logger_instance.pass("test_disabled_text_area_element_should_not_clear", session);
-        }
-    } catch (err) {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_disabled_text_area_element_should_not_clear", session);
-    }
+    //    if (response.status == "0") {
+    //        var logger_instance = new logger.logger;
+    //        logger_instance.fail("test_disabled_text_area_element_should_not_clear", "unknown", session);
+    //    } else {
+    //        var logger_instance = new logger.logger;
+    //        logger_instance.pass("test_disabled_text_area_element_should_not_clear", session);
+    //    }
+    //} catch (err) {
+    //    var logger_instance = new logger.logger;
+    //    logger_instance.pass("test_disabled_text_area_element_should_not_clear", session);
+    //}
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_disabled_text_area_element_should_not_clear", session, "test is not to spec");
 }
 
 function test_read_only_text_area_element_should_not_clear() {
-    driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_readonly_textarea_page.html");
-    var element = driver.element_by_id(session, "readOnlyTextArea");
-    var response = element.clear();
-    try {
-        var response = element.clear();
+    //driver.get(session, tools.get_current_directory_name() + "/user_input/res/element_clear_readonly_textarea_page.html");
+    //var element = driver.element_by_id(session, "readOnlyTextArea");
+    //var response = element.clear();
+    //try {
+    //    var response = element.clear();
 
-        if (response.status == "0") {
-            var logger_instance = new logger.logger;
-            logger_instance.fail("test_read_only_text_area_element_should_not_clear", "unknown", session);
-        } else {
-            var logger_instance = new logger.logger;
-            logger_instance.pass("test_read_only_text_area_element_should_not_clear", session);
-        }
-    } catch (err) {
-        var logger_instance = new logger.logger;
-        logger_instance.pass("test_read_only_text_area_element_should_not_clear", session);
-    }
+    //    if (response.status == "0") {
+    //        var logger_instance = new logger.logger;
+    //        logger_instance.fail("test_read_only_text_area_element_should_not_clear", "unknown", session);
+    //    } else {
+    //        var logger_instance = new logger.logger;
+    //        logger_instance.pass("test_read_only_text_area_element_should_not_clear", session);
+    //    }
+    //} catch (err) {
+    //    var logger_instance = new logger.logger;
+    //    logger_instance.pass("test_read_only_text_area_element_should_not_clear", session);
+    //}
+    var logger_instance = new logger.logger;
+    logger_instance.skip("test_read_only_text_area_element_should_not_clear", session, "test is not to spec");
 }
 
 function test_content_editable_area_should_clear() {
